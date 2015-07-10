@@ -85,7 +85,7 @@ var value = header[0].getAttribute('data-dynatable-column');
    }
 //Enable the update button when a button is checked. 
 $(':checkbox').change(function(){
-  console.log(this)
+  console.log($(this).closest('tr'));
 })                           
    }                                                                 
  </script> <!-- Adding buttons script -->
