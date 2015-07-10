@@ -58,14 +58,17 @@ observer.observe(document, {
 });
 
 var addChecks = function(){
+//Add the update button to the end of every row.
 var rows=$('tr');
 for(i=1;i<rows.length;i++){
   var tdButton = document.createElement('button');
   tdButton.setAttribute("class","btn btn-default update");
   tdButton.setAttribute("id","button"+i);
+  tdButton.setAttribute("disabled","disabled");
   tdButton.innerHTML="Update";
   rows[i].appendChild(tdButton);
 }
+//convert all of the true/false values in to checkboxes.
 var boxes=$('td');
 for(i=0;i<boxes.length;i++){
 var index = $(boxes[i]).index()+1;
@@ -76,7 +79,11 @@ var value = header[0].getAttribute('data-dynatable-column');
   }
    if(boxes[i].innerHTML=="false"){
    boxes[i].innerHTML='<input type="checkbox" name="roles" value="'+value+'" >' }
-   }                            
+   }
+//Enable the update button when a button is checked. 
+$(':checkbox').change(function(){
+  console.log(this)
+})                           
    }                                                                 
  </script> <!-- Adding buttons script -->
 
