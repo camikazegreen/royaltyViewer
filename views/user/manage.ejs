@@ -59,12 +59,11 @@ $(':checkbox').change(function(){
   var keys = [];
   var keyTH = $('th');
   var values = [];
-  var valueTR = $(this).closest('tr').children();
+  var TR = $(this).closest('tr');
   for(i=0;i<keyTH.length;i++){
     keys.push(keyTH[i].getAttribute('data-dynatable-column'));
-    values.push(valueTR);
-
   }
+  TR.find('.update').removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   console.log(keys,values);
 })                           
    } 
