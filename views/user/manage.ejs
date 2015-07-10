@@ -51,8 +51,8 @@ var observer = new MutationObserver(function(mutations, observer) {
 
 // define what element should be observed by the observer
 // and what types of mutations trigger the callback
-var target = document.querySelector('#user-table');
-target = target.firstElementChild.nextElementChild;
+var target = document.getElementById('#user-table');
+
 console.log(target);
 observer.observe(target, {
   subtree: true,
