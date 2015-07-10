@@ -56,8 +56,15 @@ observer.observe(document, {
   attributes: true
   //...
 });
-$('#user-table').change()
+
 var addChecks = function(){
+var rows=$('tr');
+for(i=0;i<rows.length;i++){
+  var tdButton = document.createElement('button');
+  tdButton.setAttribute("class","btn btn-default update");
+  tdButton.setAttribute("id","button"+i);
+  row[i].appendChild(tdButton);
+}
 var boxes=$('td');
 for(i=0;i<boxes.length;i++){
 var index = $(boxes[i]).index()+1;
