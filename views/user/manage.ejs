@@ -62,7 +62,7 @@ $(':checkbox').change(function(){
   var valueTR = $(this).closest('tr').children;
   for(i=0;i<keyTH.length;i++){
     keys.push(keyTH[i].getAttribute('data-dynatable-column'));
-    values.push(valueTR[i].firstElementChild.innerHTML);
+    values.push(valueTR);
 
   }
   console.log(keys,values);
