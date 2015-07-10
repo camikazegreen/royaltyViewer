@@ -56,7 +56,9 @@ var value = header[0].getAttribute('data-dynatable-column');
    }
 //Enable the update button when a button is checked. 
 $(':checkbox').change(function(){
-  $(this).closest('tr').css("background-color","red");
+  var keys = $('th')['data-dynatable-column'];
+  console.log(keys);
+  $(this).closest('tr')
 })                           
    } 
 
@@ -64,38 +66,13 @@ var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
 $('#user-table')
 .bind('dynatable:afterUpdate',function(e,dynatable){
-  console.log("Table is init");
   addChecks();
 })
 .dynatable({
 dataset:{
   records: myRecords
   }
-  }).bind('dynatable:afterProcess',addChecks);
+  })
   </script>
-<script type="text/javascript">
-/*MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-
-var observer = new MutationObserver(function(mutations, observer) {
-    // fired when a mutation occurs
-    console.log(observer);
-    addChecks();
-    // ...
-});
-
-// define what element should be observed by the observer
-// and what types of mutations trigger the callback
-var target = document;
-
-console.log(target);
-observer.observe(target, {
-  subtree: true,
-  attributes: true
-  //...
-});
-*/
-
-                                                                
- </script> <!-- Adding buttons script -->
 
 
