@@ -1,0 +1,55 @@
+<!-- Default home page -->
+<!--SCRIPTS-->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/dynatable.js"></script>
+<!--SCRIPTS END-->
+<!--STYLES-->
+<link rel="stylesheet" href="/styles/dynatable.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<!--STYLES END-->
+<div class="container">
+<table id="user-table">
+  <thead>
+    <th>Id</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Admin</th>
+    <th>Client</th>
+    <th>Creative Licensing</th>
+    <th>Customer</th>
+    <th>Music Admin</th>
+    <th>Music Supervisor</th>
+    <th>Registered</th>
+    <th>Staff</th>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+<pre id="json-records" class="hidden">
+<% var records= JSON.stringify(users) %>
+<%= records %>
+</pre>
+<script type="text/javascript">
+var $records = $('#json-records'),
+    myRecords = JSON.parse($records.text());
+$('#user-table').dynatable({
+dataset:{
+  records: myRecords
+  }
+  });
+  </script>
+<script type="text/javascript">
+var boxes=$('td');
+for(i=0;i<boxes.length;i++){
+var index = $(boxes[i]).index()+1;
+var header = $('tr th:nth-child('+index+')');
+var value = header[0].getAttribute('data-dynatable-column');
+  if(boxes[i].innerHTML=="true"){
+  boxes[i].innerHTML='<input type="checkbox" name="roles" value="'+value+'" checked="checked">'
+  }
+   if(boxes[i].innerHTML=="false"){
+   boxes[i].innerHTML='<input type="checkbox" name="roles" value="'+value+'" >' }
+   }                                                                                             </script> <!-- Adding buttons script -->
+
+
