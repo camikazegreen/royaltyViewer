@@ -58,11 +58,14 @@ var value = header[0].getAttribute('data-dynatable-column');
 $(':checkbox').change(function(){
   var keys = [];
   var keyTH = $('th');
+  var values = [];
+  var valueTR = $(this).closest('tr');
   for(i=0;i<keyTH.length;i++){
-    keys.push(keyTH[i]['data-dynatable-column']);
+    keys.push(keyTH[i].getAttribute('data-dynatable-column'));
+    values.push(valueTR[i].firstElementChild.innerHTML);
+
   }
-  console.log(keys);
-  $(this).closest('tr')
+  console.log(keys,values);
 })                           
    } 
 
