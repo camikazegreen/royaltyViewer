@@ -51,7 +51,7 @@ var observer = new MutationObserver(function(mutations, observer) {
 
 // define what element should be observed by the observer
 // and what types of mutations trigger the callback
-observer.observe(document, {
+observer.observe("div#dynatable-processing-user-table", {
   subtree: true,
   attributes: true
   //...
