@@ -65,6 +65,7 @@ var $records = $('#json-records'),
 $('#user-table')
 .bind('dynatable:init',function(e,dynatable){
   console.log("Table is init");
+  addChecks();
 })
 .dynatable({
 dataset:{
