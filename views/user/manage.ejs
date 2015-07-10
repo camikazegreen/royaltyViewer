@@ -62,11 +62,13 @@ $(':checkbox').change(function(){
 
 var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
-$('#user-table').dynatable({
+$('#user-table')
+.bind('dynatable:init',addChecks())
+.dynatable({
 dataset:{
   records: myRecords
   }
-  }).bind('dynatable:init',addChecks);
+  }).bind('dynatable:afterProcess',addChecks);
   </script>
 <script type="text/javascript">
 /*MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
