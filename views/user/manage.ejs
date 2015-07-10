@@ -63,8 +63,11 @@ $(':checkbox').change(function(){
   for(i=0;i<keyTH.length;i++){
     keys.push(keyTH[i].getAttribute('data-dynatable-column'));
   }
-  TR.find('.update').removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
-  console.log(keys,values);
+  var submitButton = TR.find('.update')
+  submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
+  $(submitButton).click(function(){
+    console.log("It's submitting...")
+  })
 })                           
    } 
 
