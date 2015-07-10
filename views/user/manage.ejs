@@ -63,7 +63,7 @@ $(':checkbox').change(function(){
 var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
 $('#user-table')
-.bind('dynatable:init',function(e,dynatable){
+.bind('dynatable:afterUpdate',function(e,dynatable){
   console.log("Table is init");
   addChecks();
 })
