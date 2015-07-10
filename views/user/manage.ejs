@@ -59,10 +59,11 @@ observer.observe(document, {
 
 var addChecks = function(){
 var rows=$('tr');
-for(i=0;i<rows.length;i++){
+for(i=1;i<rows.length;i++){
   var tdButton = document.createElement('button');
   tdButton.setAttribute("class","btn btn-default update");
   tdButton.setAttribute("id","button"+i);
+  tdButton.innerHTML="Update";
   rows[i].appendChild(tdButton);
 }
 var boxes=$('td');
