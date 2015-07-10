@@ -40,6 +40,23 @@ dataset:{
   });
   </script>
 <script type="text/javascript">
+MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+var observer = new MutationObserver(function(mutations, observer) {
+    // fired when a mutation occurs
+    console.log(mutations, observer);
+    // ...
+});
+
+// define what element should be observed by the observer
+// and what types of mutations trigger the callback
+observer.observe(document, {
+  subtree: true,
+  attributes: true
+  //...
+});
+$('#user-table').change()
+var function = addChecks(){
 var boxes=$('td');
 for(i=0;i<boxes.length;i++){
 var index = $(boxes[i]).index()+1;
@@ -50,6 +67,8 @@ var value = header[0].getAttribute('data-dynatable-column');
   }
    if(boxes[i].innerHTML=="false"){
    boxes[i].innerHTML='<input type="checkbox" name="roles" value="'+value+'" >' }
-   }                                                                                             </script> <!-- Adding buttons script -->
+   }                            
+   }                                                                 
+ </script> <!-- Adding buttons script -->
 
 
