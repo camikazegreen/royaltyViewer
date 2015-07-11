@@ -39,7 +39,8 @@ for(i=1;i<rows.length;i++){
   tdButton.setAttribute("class","btn btn-default update");
   tdButton.setAttribute("id","button"+i);
   tdButton.setAttribute("disabled","disabled");
-  tdButton.setAttribute("data-addRoles","[]")
+  tdButton.setAttribute("data-addRoles","[]");
+  tdButton.setAttribute("data-remRoles","[]");
   tdButton.innerHTML="Update";
   rows[i].appendChild(tdButton);
 }
@@ -59,15 +60,22 @@ var value = header[0].getAttribute('data-dynatable-column');
 $(':checkbox').change(function(){
   var TR = $(this).closest('tr');
   var username = TR.children()[1].innerHTML;
-  var addRoles = this.value;
+  var addRoles = '';
+  var remRoles = '';
+  if(this.checked){addRoles=this.value};
+  if(!this.checked){remRoles=this.value};
   var submitButton = TR.find('.update')
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
     $(this).unbind();
-    var existing = JSON.parse(this.getAttribute('data-addRoles'));
-    existing.push(addRoles);
-    this.setAttribute('data-addRoles',JSON.stringify(existing));
-    console.log(existing);
+    var existingAdd = JSON.parse(this.getAttribute('data-addRoles'));
+    existingAdd.push(addRoles);
+    this.setAttribute('data-addRoles',JSON.stringify(existingAdd));
+    var existingRem = JSON.parse(this.getAttribute('data-remRoles'));
+    existingRem.push(remRoles);
+    this.setAttribute('data-remRoles',JSON.stringify(existingRem));
+
+    console.log(existingAdd,existingRem);
   })
 })                           
    } 
