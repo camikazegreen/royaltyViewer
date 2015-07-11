@@ -8,6 +8,13 @@ _.merge(exports, {
 
   // Extend with custom logic here by adding additional fields, methods, etc.
 
+  update: function(req,res){
+    var params = req.params.all()
+    sails.log(params);
+    res.status(201);
+    res.json("did it");
+
+  }
   /**
    * For example:
    *
