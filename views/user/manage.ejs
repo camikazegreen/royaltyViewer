@@ -86,8 +86,8 @@ $(':checkbox').change(function(){
   }
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
-  var data = "username:"+username+",add:"+existingAdd+",remove:"+existingRem+"}";
-  // data = JSON.parse(data);
+  var data = "{username:"+username+",add:"+existingAdd+",remove:"+existingRem+"}";
+  data = JSON.parse(data);
   // console.log(data);
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
