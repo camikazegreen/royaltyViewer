@@ -79,6 +79,7 @@ $(':checkbox').change(function(){
     existingRem.push(remRoles);
     $(submitButton).attr('data-remRoles',JSON.stringify(existingRem));
     var existingAdd = JSON.parse($(submitButton).attr('data-addRoles'));
+    console.log(existingAdd.indexOf(remRoles));
     existingAdd.splice(existingAdd.indexOf(remRoles),1);
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
