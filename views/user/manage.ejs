@@ -60,13 +60,12 @@ $(':checkbox').change(function(){
   var keyTH = $('th');
   var values = [];
   var TR = $(this).closest('tr');
-  for(i=0;i<keyTH.length;i++){
-    keys.push(keyTH[i].getAttribute('data-dynatable-column'));
-  }
   var submitButton = TR.find('.update')
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
-    console.log("It's submitting...")
+    var username = //TR nth-child(2).innerHTML
+    var addRoles = this.value;
+    console.log(TR.children()[2]);
   })
 })                           
    } 
