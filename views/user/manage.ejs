@@ -39,6 +39,7 @@ for(i=1;i<rows.length;i++){
   tdButton.setAttribute("class","btn btn-default update");
   tdButton.setAttribute("id","button"+i);
   tdButton.setAttribute("disabled","disabled");
+  tdButton.setAttribute("data-addRoles","[]")
   tdButton.innerHTML="Update";
   rows[i].appendChild(tdButton);
 }
@@ -63,9 +64,9 @@ $(':checkbox').change(function(){
   var submitButton = TR.find('.update')
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
-    var username = '';//TR nth-child(2).innerHTML
+    var username = TR.children()[1].innerHTML;//TR nth-child(2).innerHTML
     var addRoles = this.value;
-    console.log(TR.children()[2]);
+    console.log(addRoles);
   })
 })                           
    } 
