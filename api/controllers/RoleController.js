@@ -9,10 +9,22 @@ _.merge(exports, {
   // Extend with custom logic here by adding additional fields, methods, etc.
 
   update: function(req,res){
-    sails.log(req.body);
-    sails.log(req.body.username);
-    sails.log(req.body.add);
-    sails.log(req.body.remove);
+    var params = req.body;
+    var username = params.username;
+    var add = params.add;
+    var remove = params.remove
+    for(i=0;i<add.length;i++){
+    PermissionService.addUsersToRole(username,add[i])
+    .then(function(){
+      sails.log('added '+username+' to role '+add[i])
+    })
+  }
+    for(i=0;i<remove.length;i++){
+    PermissionService.removeUsersFromRole(username,remove[i])
+    .then(function(){
+      sails.log('removed '+username+' from role '+remove[i])
+    })
+  }
     res.status(201);
     res.json("did it");
 
