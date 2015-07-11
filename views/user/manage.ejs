@@ -70,7 +70,7 @@ $(':checkbox').change(function(){
     existingAdd.push(addRoles);
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
     var existingRem = JSON.parse($(submitButton).attr('data-remRoles'));
-    existingRem.pop(addRoles);
+    existingRem.splice(existingRem.indexOf(addRoles),1);
     $(submitButton).attr('data-remRoles',JSON.stringify(existingRem));
   };
   if(!this.checked){
@@ -79,7 +79,7 @@ $(':checkbox').change(function(){
     existingRem.push(remRoles);
     $(submitButton).attr('data-remRoles',JSON.stringify(existingRem));
     var existingAdd = JSON.parse($(submitButton).attr('data-addRoles'));
-    existingAdd.pop(remRoles);
+    existingAdd.splice(existingAdd.indexOf(remRoles),1);
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
