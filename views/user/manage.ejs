@@ -63,9 +63,9 @@ $(':checkbox').change(function(){
   var submitButton = TR.find('.update')
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
-    var existing = this.getAttribute('data-addRoles').toJSON();
+    var existing = JSON.parse(this.getAttribute('data-addRoles'));
     existing.push(addRoles);
-    this.setAttribute('data-addRoles',existing);
+    this.setAttribute('data-addRoles',JSON.stringify(existing));
     console.log(existing);
   })
 })                           
