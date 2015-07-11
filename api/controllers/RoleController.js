@@ -11,6 +11,7 @@ _.merge(exports, {
   update: function(req,res){
     var params = req.params
     sails.log(params);
+    sails.log(req.body);
     res.status(201);
     res.json("did it");
 
