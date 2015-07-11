@@ -59,21 +59,38 @@ var value = header[0].getAttribute('data-dynatable-column');
 //Enable the update button when a button is checked. 
 $(':checkbox').change(function(){
   var TR = $(this).closest('tr');
+  var submitButton = TR.find('.update');
+  $(submitButton).unbind();
   var username = TR.children()[1].innerHTML;
   var addRoles = '';
   var remRoles = '';
-  if(this.checked){addRoles=this.value};
-  if(!this.checked){remRoles=this.value};
-  var submitButton = TR.find('.update')
+  if(this.checked){
+    addRoles=this.value
+    var existingAdd = JSON.parse(submitButton.getAttribute('data-addRoles'));
+    existingAdd.push(addRoles);
+    submitButton.setAttribute('data-addRoles',JSON.stringify(existingAdd));
+    var existingRem = JSON.parse(submitButton.getAttribute('data-remRoles'));
+    existingRem.pop(addRoles);
+    submitButton.setAttribute('data-remRoles',JSON.stringify(existingRem));};
+
+  };
+  if(!this.checked){
+    remRoles=this.value;
+    var existingRem = JSON.parse(submitButton.getAttribute('data-remRoles'));
+    existingRem.push(remRoles);
+    submitButton.setAttribute('data-remRoles',JSON.stringify(existingRem));
+    var existingAdd = JSON.parse(submitButton.getAttribute('data-addRoles'));
+    existingAdd.pop(remRoles);
+    submitButton.setAttribute('data-addRoles',JSON.stringify(existingAdd));
+  };
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
-    $(this).unbind();
     var existingAdd = JSON.parse(this.getAttribute('data-addRoles'));
-    existingAdd.push(addRoles);
-    this.setAttribute('data-addRoles',JSON.stringify(existingAdd));
+    // existingAdd.push(addRoles);
+    // this.setAttribute('data-addRoles',JSON.stringify(existingAdd));
     var existingRem = JSON.parse(this.getAttribute('data-remRoles'));
-    existingRem.push(remRoles);
-    this.setAttribute('data-remRoles',JSON.stringify(existingRem));
+    // existingRem.push(remRoles);
+    // this.setAttribute('data-remRoles',JSON.stringify(existingRem));
 
     console.log(existingAdd,existingRem);
   })
