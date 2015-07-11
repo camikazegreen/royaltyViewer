@@ -86,7 +86,7 @@ $(':checkbox').change(function(){
   }
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
-  var data = "{username:'"+username+"',add:'"+$(submitButton).attr('data-addRoles')+"',remove:'"+$(submitButton).attr('data-remRoles')+"'}";
+  var data = "{username:'"+username+"',add:"+$(submitButton).attr('data-addRoles')+",remove:"+$(submitButton).attr('data-remRoles')+"}";
   // data = JSON.parse(data);
   console.log(data);
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
