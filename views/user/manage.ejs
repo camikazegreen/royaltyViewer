@@ -98,7 +98,7 @@ $(':checkbox').change(function(){
 
     console.log(username,existingAdd,existingRem);
     $.ajax({
-      url:'role/update',
+      url:'/role/update',
       method:'POST',
       data:data
     })
