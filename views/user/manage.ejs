@@ -96,10 +96,12 @@ $(':checkbox').change(function(){
     // existingRem.push(remRoles);
     // this.setAttribute('data-remRoles',JSON.stringify(existingRem));
 
-    console.log(username,existingAdd,existingRem);
+    console.log(data);
     $.ajax({
       url:'/role/update',
       method:'POST',
+      dataType:'json',
+      processData:false,
       data:data
     })
   })
