@@ -88,7 +88,6 @@ $(':checkbox').change(function(){
   };
   // var data = "{username:'"+username+"',add:"+$(submitButton).attr('data-addRoles')+",remove:"+$(submitButton).attr('data-remRoles')+"}";
   // data = JSON.parse(data);
-  console.log(data);
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
     var existingAdd = JSON.parse(this.getAttribute('data-addRoles'));
