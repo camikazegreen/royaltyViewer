@@ -73,8 +73,6 @@ $(':checkbox').change(function(){
     existingRem.pop(addRoles);
     submitButton.setAttribute('data-remRoles',JSON.stringify(existingRem));
   };
-
-  };
   if(!this.checked){
     remRoles=this.value;
     var existingRem = JSON.parse(submitButton.getAttribute('data-remRoles'));
