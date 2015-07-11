@@ -102,11 +102,11 @@ $(':checkbox').change(function(){
         add:$(submitButton).attr('data-addRoles'),
         remove:$(submitButton).attr('data-remRoles')
       }
-    }).success(data){
+    }).done(function(data){
   submitButton.removeClass('btn-info').addClass('btn-success');
   submitButton.html('Updated');
 
-    };
+    });
   })
 })                           
    } 
