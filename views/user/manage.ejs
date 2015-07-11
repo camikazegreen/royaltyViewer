@@ -78,25 +78,20 @@ $(':checkbox').change(function(){
   if(!this.checked){
     remRoles=this.value;
     var existingRem = JSON.parse($(submitButton).attr('data-remRoles'));
-    existingRem.push(remRoles);console.log("existingRem after parse before stringify",existingRem)
-    $(submitButton).attr('data-remRoles',JSON.stringify(existingRem));console.log(JSON.stringify(existingRem));
+    existingRem.push(remRoles);
+    $(submitButton).attr('data-remRoles',JSON.stringify(existingRem));
     var existingAdd = JSON.parse($(submitButton).attr('data-addRoles'));
     if(existingAdd.indexOf(remRoles)!==-1){
     existingAdd.splice(existingAdd.indexOf(remRoles),1);
   }
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
-  // var data = "{username:'"+username+"',add:"+$(submitButton).attr('data-addRoles')+",remove:"+$(submitButton).attr('data-remRoles')+"}";
-  // data = JSON.parse(data);
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
-  $(submitButton).click(function(){
-    var existingAdd = JSON.parse(this.getAttribute('data-addRoles'));
-    // existingAdd.push(addRoles);
-    // this.setAttribute('data-addRoles',JSON.stringify(existingAdd));
-    var existingRem = JSON.parse(this.getAttribute('data-remRoles'));
-    // existingRem.push(remRoles);
-    // this.setAttribute('data-remRoles',JSON.stringify(existingRem));
+  submitButton.html('Update');
 
+  $(submitButton).click(function(){
+  submitButton.removeClass('btn-primary').addClass('btn-info').prop('disabled',true);
+  submitButton.html('Updating...');
     // console.log(data);
     $.ajax({
       url:'/role/update',
@@ -107,7 +102,11 @@ $(':checkbox').change(function(){
         add:$(submitButton).attr('data-addRoles'),
         remove:$(submitButton).attr('data-remRoles')
       }
-    });
+    }).success(data){
+  submitButton.removeClass('btn-info').addClass('btn-success');
+  submitButton.html('Updated');
+
+    };
   })
 })                           
    } 
