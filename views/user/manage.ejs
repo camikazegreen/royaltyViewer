@@ -66,21 +66,21 @@ $(':checkbox').change(function(){
   var remRoles = '';
   if(this.checked){
     addRoles=this.value;
-    var existingAdd = JSON.parse($(submitButton).getAttribute('data-addRoles'));
+    var existingAdd = JSON.parse($(submitButton).attr('data-addRoles'));
     existingAdd.push(addRoles);
-    $(submitButton).setAttribute('data-addRoles',JSON.stringify(existingAdd));
-    var existingRem = JSON.parse($(submitButton).getAttribute('data-remRoles'));
+    $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
+    var existingRem = JSON.parse($(submitButton).attr('data-remRoles'));
     existingRem.pop(addRoles);
-    $(submitButton).setAttribute('data-remRoles',JSON.stringify(existingRem));
+    $(submitButton).attr('data-remRoles',JSON.stringify(existingRem));
   };
   if(!this.checked){
     remRoles=this.value;
-    var existingRem = JSON.parse($(submitButton).getAttribute('data-remRoles'));
+    var existingRem = JSON.parse($(submitButton).attr('data-remRoles'));
     existingRem.push(remRoles);
-    $(submitButton).setAttribute('data-remRoles',JSON.stringify(existingRem));
-    var existingAdd = JSON.parse($(submitButton).getAttribute('data-addRoles'));
+    $(submitButton).attr('data-remRoles',JSON.stringify(existingRem));
+    var existingAdd = JSON.parse($(submitButton).attr('data-addRoles'));
     existingAdd.pop(remRoles);
-    $(submitButton).setAttribute('data-addRoles',JSON.stringify(existingAdd));
+    $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
