@@ -86,7 +86,7 @@ $(':checkbox').change(function(){
   }
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
-  var data = "{username:'"+username+"',add:"+$(submitButton).attr('data-addRoles')+",remove:"+$(submitButton).attr('data-remRoles')+"}";
+  // var data = "{username:'"+username+"',add:"+$(submitButton).attr('data-addRoles')+",remove:"+$(submitButton).attr('data-remRoles')+"}";
   // data = JSON.parse(data);
   console.log(data);
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
@@ -103,7 +103,11 @@ $(':checkbox').change(function(){
       url:'/role/update',
       method:'POST',
       dataType:'json',
-      data:data
+      data:{
+        username:username,
+        add:$(submitButton).attr('data-addRoles'),
+        remove:$(submitButton).attr('data-remRoles')
+      }
     });
   })
 })                           
