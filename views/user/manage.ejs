@@ -86,7 +86,7 @@ $(':checkbox').change(function(){
   }
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
-  var data = "{username:"+username+",add:"+existingAdd+",remove:"+existingRem+"}"
+  var data = "{username:'"+username+"',add:'"+existingAdd+"',remove:'"+existingRem+"''}"
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
     var existingAdd = JSON.parse(this.getAttribute('data-addRoles'));
