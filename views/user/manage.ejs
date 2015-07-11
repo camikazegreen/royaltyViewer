@@ -86,7 +86,9 @@ $(':checkbox').change(function(){
   }
     $(submitButton).attr('data-addRoles',JSON.stringify(existingAdd));
   };
-  var data = "username:"+username+",add:"+existingAdd+",remove:"+existingRem+"}"
+  var data = "username:"+username+",add:"+existingAdd+",remove:"+existingRem+"}";
+  data = JSON.parse(data);
+  console.log(data);
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
     var existingAdd = JSON.parse(this.getAttribute('data-addRoles'));
@@ -96,13 +98,13 @@ $(':checkbox').change(function(){
     // existingRem.push(remRoles);
     // this.setAttribute('data-remRoles',JSON.stringify(existingRem));
 
-    console.log(data);
+    // console.log(data);
     $.ajax({
       url:'/role/update',
       method:'POST',
       dataType:'json',
       processData:false,
-      data:JSON.parse(data)
+      data:data
     })
   })
 })                           
