@@ -11,8 +11,8 @@ _.merge(exports, {
   update: function(req,res){
     var params = req.body;
     var username = params.username;
-    var add = params.add;
-    var remove = params.remove
+    var add = JSON.parse(params.add);
+    var remove = JSON.parse(params.remove);
     for(i=0;i<add.length;i++){
     PermissionService.addUsersToRole(username,add[i])
     .then(function(){
