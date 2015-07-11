@@ -65,13 +65,14 @@ $(':checkbox').change(function(){
   var addRoles = '';
   var remRoles = '';
   if(this.checked){
-    addRoles=this.value
+    addRoles=this.value;
     var existingAdd = JSON.parse(submitButton.getAttribute('data-addRoles'));
     existingAdd.push(addRoles);
     submitButton.setAttribute('data-addRoles',JSON.stringify(existingAdd));
     var existingRem = JSON.parse(submitButton.getAttribute('data-remRoles'));
     existingRem.pop(addRoles);
-    submitButton.setAttribute('data-remRoles',JSON.stringify(existingRem));};
+    submitButton.setAttribute('data-remRoles',JSON.stringify(existingRem));
+  };
 
   };
   if(!this.checked){
