@@ -57,16 +57,16 @@ var value = header[0].getAttribute('data-dynatable-column');
    }
 //Enable the update button when a button is checked. 
 $(':checkbox').change(function(){
-  var keys = [];
-  var keyTH = $('th');
-  var values = [];
   var TR = $(this).closest('tr');
+  var username = TR.children()[1].innerHTML;
+  var addRoles = this.value;
   var submitButton = TR.find('.update')
   submitButton.removeClass('btn-default').addClass('btn-primary').prop('disabled',false);
   $(submitButton).click(function(){
-    var username = TR.children()[1].innerHTML;//TR nth-child(2).innerHTML
-    var addRoles = this.value;
-    console.log(addRoles);
+    var existing = this.getAttribute('data-addRoles').toJSON();
+    existing.push(addRoles);
+    this.setAttribute('data-addRoles',existing);
+    console.log(existing);
   })
 })                           
    } 
