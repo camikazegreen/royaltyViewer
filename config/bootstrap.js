@@ -29,32 +29,32 @@ while(i<roles.length){
   });
   i++;
 }
-var staff=[
-{username:'jenny',email:'jenny.johnson@modernworkspub.com'},
-{username:'melissa',email:'melissa.martin@modernworkspub.com'},
-{username:'erin',email:'erin.grover@modernworkspub.com'},
-{username:'alex',email:'alex.allen@modernworkspub.com'},
-{username:'adam',email:'adam.tully@modernworkspub.com'},
-{username:'bob',email:'bob.donnelly@modernworkspub.com'},
-{username:'dan',email:'dan.coleman@modernworkspub.com'},
-{username:'cameron',email:'cameron.green@modernworkspub.com'}
-]
-i=0;
-while(i<staff.length){
-  User.findOrCreate(staff[i])
-    .exec(function createStaffCB(err,record){
-      if(err){console.log(err)};
-      console.log('Created Staff '+record.username);
-      if(record.username == 'cameron'){
-        PermissionService.addUsersToRole('cameron','admin');
-      }
-PermissionService.addUsersToRole(record.username,'staff')
-    .then(function(){
-      sails.log('added '+record.username+' to role staff');
-    });
-    });
-  i++;
-}
+// var staff=[
+// {username:'jenny',email:'jenny.johnson@modernworkspub.com'},
+// {username:'melissa',email:'melissa.martin@modernworkspub.com'},
+// {username:'erin',email:'erin.grover@modernworkspub.com'},
+// {username:'alex',email:'alex.allen@modernworkspub.com'},
+// {username:'adam',email:'adam.tully@modernworkspub.com'},
+// {username:'bob',email:'bob.donnelly@modernworkspub.com'},
+// {username:'dan',email:'dan.coleman@modernworkspub.com'},
+// {username:'cameron',email:'cameron.green@modernworkspub.com'}
+// ]
+// i=0;
+// while(i<staff.length){
+//   User.findOrCreate(staff[i])
+//     .exec(function createStaffCB(err,record){
+//       if(err){console.log(err)};
+//       console.log('Created Staff '+record.username);
+//       if(record.username == 'cameron'){
+//         PermissionService.addUsersToRole('cameron','admin');
+//       }
+// PermissionService.addUsersToRole(record.username,'staff')
+//     .then(function(){
+//       sails.log('added '+record.username+' to role staff');
+//     });
+//     });
+//   i++;
+// }
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();
