@@ -23,6 +23,7 @@ $(document).ready(function(){
     $("#morePka").click(function(){
       pkaCounter++;
       var morePka = document.getElementById('morePka');
+      var lessPka = document.getElementById('lessPka');
       var newInput = document.createElement("input");
       newInput.setAttribute("type","text");
       newInput.setAttribute("class","form-control");
@@ -32,6 +33,11 @@ $(document).ready(function(){
       var pkaDiv = document.getElementById("pkaDiv");
       pkaDiv.appendChild(newInput);
       pkaDiv.appendChild(morePka);
+      pkaDiv.appendChild(lessPka);
+    });
+    $("#lessPka").click(function(){
+      var toRemove = document.getElementById("pkaName"+pkaCounter);
+      toRemove.parentNode.removeChild(toRemove);
     })
 
     var sameAddressCheck = document.getElementById('addressChecker');
