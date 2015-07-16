@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var pkaCounter = 1;
     var perform = document.getElementById('pkaName1');
     var legal = document.getElementById('legalName');
     var payee = document.getElementById('payeeName');
@@ -18,6 +19,20 @@ $(document).ready(function(){
     }
     first.addEventListener('input',fillPerform);
     last.addEventListener('input',fillPerform);
+
+    $("#morePka").click(function(){
+      pkaCounter++;
+      var morePka = document.getElementById('morePka');
+      var newInput = document.createElement("input");
+      newInput.setAttribute("type","text");
+      newInput.setAttribute("class","form-control");
+      newInput.setAttribute("id","pkaName"+pkaCounter);
+      newInput.setAttribute("name","name");
+      newInput.setAttribute("placeholder","Enter name");
+      var pkaDiv = document.getElementById("pkadiv");
+      pkaDiv.appendChild(newInput);
+      pkaDiv.appendChild(morePka);
+    })
 
     var sameAddressCheck = document.getElementById('addressChecker');
 
