@@ -29,7 +29,7 @@ $(document).ready(function(){
       newInput.setAttribute("id","pkaName"+pkaCounter);
       newInput.setAttribute("name","name");
       newInput.setAttribute("placeholder","Enter name");
-      var pkaDiv = document.getElementById("pkadiv");
+      var pkaDiv = document.getElementById("pkaDiv");
       pkaDiv.appendChild(newInput);
       pkaDiv.appendChild(morePka);
     })
