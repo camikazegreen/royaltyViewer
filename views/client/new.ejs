@@ -7,7 +7,7 @@
     <li role="presentation" class="active"><a href="#artist" aria-controls="artist" role="tab" data-toggle="tab">Artist Info</a></li>
     <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab">Payment Info</a></li>
     <li role="presentation"><a href="#website" aria-controls="website" role="tab" data-toggle="tab">Website Profile</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Client Profile</a></li>
+    <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">User Account</a></li>
     <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
     <li role="presentation"><a href="#import" aria-controls="import" role="tab" data-toggle="tab">Import CSV</a></li>
   </ul>
@@ -81,8 +81,9 @@
       <input type="checkbox"> Part of a Band?
     </label>
   </div>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" id="bandName1" name="bandName" placeholder="Band name">
+    <div class="col-sm-3" id="bandDiv">
+      <input type="text" class="form-control" id="bandName1" name="bandName" placeholder="Band name"><button type="button" id="moreBand"><span class="glyphicon glyphicon-plus"></span></button><button type="button" id="lessBand"><span class="glyphicon glyphicon-minus"></span></button>
+  </div>
     </div>
 
 </div> <!-- Close row for band info -->
@@ -106,6 +107,12 @@
   <label>
     <input type="radio" name="proRadios" id="optionsRadios3" value="sesac">
     SESAC
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="proRadios" id="optionsRadios4" value="none">
+    N/A
   </label>
 </div>
 </div>
@@ -603,7 +610,23 @@
     </div>
     </div> <!-- Close website profile div -->
 
-    <div role="tabpanel" class="tab-pane" id="profile">This is where I put the Artist Profile that we recently added to our other website.</div>
+    <div role="tabpanel" class="tab-pane" id="user">
+  <legend>User Account</legend>
+        <div class="row">
+  <div class="form-group">
+    <div class="col-sm-3">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" name="username" placeholder="username">
+    </div>
+    <div class="col-sm-3">
+      <label for="userEmail">Email Address</label>
+      <input type="text" class="form-control" id="userEmail" name="username" placeholder="email address">
+    </div><div class="row">
+  <button type="submit" class="btn btn-default">Send Registration Email</button>
+</div>
+
+    <legend>Client Profile</legend>
+      This is where I put the Artist Profile that we recently added to our other website.</div>
     <div role="tabpanel" class="tab-pane" id="notes">Miscellaneous Notes
       <div class="col-sm-6">
     <textarea class="form-control" rows="10"></textarea>

@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var pkaCounter = 1;
+  var bandCounter = 1;
     var perform = document.getElementById('pkaName1');
     var legal = document.getElementById('legalName');
     var payee = document.getElementById('payeeName');
@@ -38,7 +39,28 @@ $(document).ready(function(){
     $("#lessPka").click(function(){
       var toRemove = document.getElementById("pkaName"+pkaCounter);
       toRemove.parentNode.removeChild(toRemove);
-    })
+      pkaCounter--;
+    });
+    $("#moreBand").click(function(){
+      bandCounter++;
+      var moreBand = document.getElementById('moreBand');
+      var lessBand = document.getElementById('lessBand');
+      var newInput = document.createElement("input");
+      newInput.setAttribute("type","text");
+      newInput.setAttribute("class","form-control");
+      newInput.setAttribute("id","bandName"+bandCounter);
+      newInput.setAttribute("name","name");
+      newInput.setAttribute("placeholder","Enter name");
+      var bandDiv = document.getElementById("bandDiv");
+      bandDiv.appendChild(newInput);
+      bandDiv.appendChild(moreBand);
+      bandDiv.appendChild(lessBand);
+    });
+    $("#lessBand").click(function(){
+      var toRemove = document.getElementById("bandName"+bandCounter);
+      toRemove.parentNode.removeChild(toRemove);
+      bandCounter--;
+    });
 
     var sameAddressCheck = document.getElementById('addressChecker');
 
