@@ -8,6 +8,9 @@ $(document).ready(function(){
     var intlName = document.getElementById('intlPayeeName')
     var first = document.getElementById('firstName1');
     var last = document.getElementById('lastName1');
+    var username = document.getElementById('username');
+    var userEmail = document.getElementById('userEmail');
+    var inputEmail = document.getElementById('inputEmail1');
 
     function fillPerform(){
       first = document.getElementById('firstName1');
@@ -17,6 +20,7 @@ $(document).ready(function(){
       payee.value=first.value+" "+last.value;
       checkName.value=first.value+" "+last.value;
       intlName.value=first.value+" "+last.value;
+      username.value=first.value+"."+last.value;
     }
     first.addEventListener('input',fillPerform);
     last.addEventListener('input',fillPerform);
