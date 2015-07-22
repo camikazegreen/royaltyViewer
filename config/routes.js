@@ -35,9 +35,6 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  '/client/new':{
-    view: 'client/new'
-  },
 
 
   /***************************************************************************
