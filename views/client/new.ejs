@@ -63,7 +63,9 @@
 <div class="col-sm-3">
 <label for="companySelect">Company</label>
 <select class="form-control" id="companySelect">
-  <option>Modern Works (A Side)</option>
+  <% for(var i=0;i<companies.length;i++){ %>
+  <option><%= companies[i].name %></option>
+<!--   <option>Modern Works (A Side)</option>
   <option>ArtistShare</option>
   <option>Crowded Air</option>
   <option>Goodnight Records</option>
@@ -71,7 +73,8 @@
   <option>Second Floor</option>
   <option>Shlomo Diego</option>
   <option>Superior</option>
-  <option>United For Opportunity</option>
+  <option>United For Opportunity</option> -->
+  <% } %>
 </select>
 </div></div>
 <br>
