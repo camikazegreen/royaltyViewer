@@ -12,7 +12,7 @@ module.exports = {
   		type:'string',
   		unique:true
   	},
-  	clients:{
+  	members:{
   		collection:'client',
   		via:'bands'
   	}
