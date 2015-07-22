@@ -45,7 +45,7 @@ for(var i=0;i<companies.length;i++){
     )
   .exec(function createCompaniesCB(err,record){
     if(err){console.log(err)};
-    console.log('Created Company '+record.name);
+    // console.log('Created Company '+record.name);
   });
 }
   // It's very important to trigger this callback method when you are finished
