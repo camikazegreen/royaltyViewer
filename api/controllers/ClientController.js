@@ -6,6 +6,12 @@
  */
 
 module.exports = {
-	
+	create: function(req,res){
+		Company.find()
+		.exec(function(err,results){
+			if(err){console.log(err)};
+				return res.view('client/new',{companies:results})
+		})
+	}
 };
 
