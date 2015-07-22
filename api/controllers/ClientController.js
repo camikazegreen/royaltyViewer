@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	create: function(req,res){
+	new: function(req,res){
 		Company.find()
 		.exec(function(err,results){
 			if(err){console.log(err)};
