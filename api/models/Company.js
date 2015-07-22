@@ -8,7 +8,14 @@
 module.exports = {
 
   attributes: {
-
+  	name:{
+  		type:'string',
+  		unique:true
+  	},
+  	clients:{
+  		collection:'client',
+  		via:'company'
+  	}
   }
 };
 

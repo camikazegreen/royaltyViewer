@@ -11,6 +11,7 @@ $(document).ready(function(){
     var username = document.getElementById('username');
     var userEmail = document.getElementById('userEmail');
     var inputEmail = document.getElementById('inputEmail1');
+    var userEmail = document.getElementById('userEmail');
 
     function fillPerform(){
       first = document.getElementById('firstName1');
@@ -24,6 +25,7 @@ $(document).ready(function(){
     }
     first.addEventListener('input',fillPerform);
     last.addEventListener('input',fillPerform);
+    inputEmail.addEventListener('input',function(){userEmail.value=inputEmail.value});
 
     $("#morePka").click(function(){
       pkaCounter++;

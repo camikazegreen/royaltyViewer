@@ -36,10 +36,6 @@ _.merge(exports, {
         j++;}
     i++;}
 return res.view('user/manage',{users:r})
-    while(r.length){
-      var thisUser=r.pop();
-      console.log(thisUser.toJSON())
-    }
   });
   }
   /**

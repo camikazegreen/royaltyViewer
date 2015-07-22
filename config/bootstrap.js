@@ -18,8 +18,7 @@ var roles= [
 {name:'musicSupervisor'},
 {name:'staff'}
 ]
-  i=0;
-while(i<roles.length){
+for(var i=0;i<roles.length;i++){
   Role.findOrCreate(
     roles[i]
     )
@@ -27,34 +26,28 @@ while(i<roles.length){
       if(err){console.log(err)};
       console.log('Created Role '+record.name);
   });
-  i++;
+
 }
-// var staff=[
-// {username:'jenny',email:'jenny.johnson@modernworkspub.com'},
-// {username:'melissa',email:'melissa.martin@modernworkspub.com'},
-// {username:'erin',email:'erin.grover@modernworkspub.com'},
-// {username:'alex',email:'alex.allen@modernworkspub.com'},
-// {username:'adam',email:'adam.tully@modernworkspub.com'},
-// {username:'bob',email:'bob.donnelly@modernworkspub.com'},
-// {username:'dan',email:'dan.coleman@modernworkspub.com'},
-// {username:'cameron',email:'cameron.green@modernworkspub.com'}
-// ]
-// i=0;
-// while(i<staff.length){
-//   User.findOrCreate(staff[i])
-//     .exec(function createStaffCB(err,record){
-//       if(err){console.log(err)};
-//       console.log('Created Staff '+record.username);
-//       if(record.username == 'cameron'){
-//         PermissionService.addUsersToRole('cameron','admin');
-//       }
-// PermissionService.addUsersToRole(record.username,'staff')
-//     .then(function(){
-//       sails.log('added '+record.username+' to role staff');
-//     });
-//     });
-//   i++;
-// }
+var companies=[
+{name:'Modern Works (A Side)'},
+{name:'Artist Share'},
+{name:'Crowded Air'},
+{name:'Goodnight Records'},
+{name:'Light In The Attic'},
+{name:'Second Floor Music'},
+{name:'Shlomo Diego'},
+{name:'Superior Music'},
+{name:'United For Opportunity'}
+]
+for(var i=0;i<companies.length;i++){
+  Company.findOrCreate(
+    companies[i]
+    )
+  .exec(function createCompaniesCB(err,record){
+    if(err){console.log(err)};
+    console.log('Created Company '+record.name);
+  });
+}
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();

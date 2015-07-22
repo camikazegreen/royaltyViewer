@@ -6,6 +6,11 @@
  */
 
 module.exports = {
-	
+	manage: function(req,res){
+		Company.find().populate('clients')
+		.exec(function(err,results){
+			return res.view('company/manage',{companies:results})
+		})
+	}
 };
 
