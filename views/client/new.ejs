@@ -64,16 +64,7 @@
 <label for="companySelect">Company</label>
 <select class="form-control" id="companySelect">
   <% for(var i=0;i<companies.length;i++){ %>
-  <option><%= companies[i].name %></option>
-<!--   <option>Modern Works (A Side)</option>
-  <option>ArtistShare</option>
-  <option>Crowded Air</option>
-  <option>Goodnight Records</option>
-  <option>Light In The Attic</option>
-  <option>Second Floor</option>
-  <option>Shlomo Diego</option>
-  <option>Superior</option>
-  <option>United For Opportunity</option> -->
+  <option value=<%= companies[i].id %>><%= companies[i].name %></option>
   <% } %>
 </select>
 </div></div>
