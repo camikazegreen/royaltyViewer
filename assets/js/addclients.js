@@ -180,4 +180,12 @@ $(document).ready(function(){
   }
     sameAddressCheck2.addEventListener('change',fillAddress2);
 
+    // $('#submitClient').click(function(){
+    //   var clientData = {};
+      //get values
+
+      //submit all of the bits that use outside models: band,publisher,address,etc.
+      //add the id's from those values to the data
+      //submit the client to the database
+    // })
   }) // close document.ready
