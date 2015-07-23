@@ -15,6 +15,8 @@ module.exports = {
 	manage: function(req,res){
 		Client.find().populate('company')
 		.exec(function(err,results){
+			if(err){console.log(err)};
+			console.log("No error ",results);
 			return res.view('client/manage',{clients:results})
 		})
 	}
