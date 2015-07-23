@@ -23,19 +23,19 @@
   <div class="form-group">
     <div class="col-sm-3">
       <label for="inputName1">First Name</label>
-      <input type="text" class="form-control" id="firstName1" name="name" placeholder="First name">
+      <input type="text" class="form-control" id="firstName1" name="firstName" placeholder="First name">
     </div>
     <div class="col-sm-3">
       <label for="inputName1">Last Name</label>
-      <input type="text" class="form-control" id="lastName1" name="name" placeholder="Last name">
+      <input type="text" class="form-control" id="lastName1" name="lastName" placeholder="Last name">
     </div>
     <div class="col-sm-3" id="pkaDiv">
       <label for="inputName1">Performs as</label>
-      <input type="text" class="form-control" id="pkaName1" name="name" placeholder="Enter name"><button type="button" id="morePka"><span class="glyphicon glyphicon-plus"></span></button><button type="button" id="lessPka"><span class="glyphicon glyphicon-minus"></span></button>
+      <input type="text" class="form-control" id="pkaName1" name="performsAs" placeholder="Enter name"><button type="button" id="morePka"><span class="glyphicon glyphicon-plus"></span></button><button type="button" id="lessPka"><span class="glyphicon glyphicon-minus"></span></button>
   </div>
   <div class="checkbox col-sm-3">
     <label>
-      <input type="checkbox"> Controlled?
+      <input type="checkbox" name="controlled"> Controlled?
     </label>
   </div>
 
@@ -44,17 +44,17 @@
         <div class="row"style="padding: 15px 0;">
   <div class="col-sm-6">
 <label class="radio-inline">
-  <input type="radio" id="catalog1" name="catalog" value="1" checked="checked">Full or
+  <input type="radio" id="catalog1" name="fullCatalog" value="1" checked="checked">Full or
 </label>
 <label class="radio-inline">
-  <input type="radio" id="catalog2" name="catalog" value="0">Partial Catalog
+  <input type="radio" id="catalog2" name="fullCatalog" value="0">Partial Catalog
 </label></div>
   <div class="col-sm-6">
 <label class="checkbox-inline">
   <input type="checkbox" id="syncApproval1" name="syncApproval" value="1">Sync Approval Rights?
 </label>
 <label class="checkbox-inline">
-  <input type="checkbox" id="syncApproval2" name="syncApproval" value="0">Manager OK?
+  <input type="checkbox" id="syncApproval2" name="managerOK" value="1">Manager OK?
 </label>
   </div>
 
@@ -268,7 +268,7 @@
 
 </div>
 <div class="row">
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default" id="submitClient">Submit</button>
 </div>
 
 </form>

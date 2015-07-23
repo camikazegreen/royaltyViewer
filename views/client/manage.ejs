@@ -1,0 +1,7 @@
+<div class="container">
+<ul>
+	<% for(var i=0;i<clients.length;i++){ %>
+	<li><%= clients[i].name %></li>
+	<% } %>
+	<p><% JSON.stringify(clients) %></p>
+</ul>

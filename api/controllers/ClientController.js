@@ -11,6 +11,12 @@ module.exports = {
 		.exec(function(err,results){
 				return res.view('client/new',{companies:results})
 		})
+	},
+	manage: function(req,res){
+		Client.find().populate('company')
+		.exec(function(err,results){
+			return res.view('client/manage',{clients:results})
+		})
 	}
 };
 
