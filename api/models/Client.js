@@ -8,31 +8,31 @@
 module.exports = {
 
   attributes: {
-  	firstName:{
+  	firstname:{
   		type:'string'
   	},
-  	lastName:{
+  	lastname:{
   		type:'string'
   	},
-  	performsAs:{
+  	performsas:{
   		type:'array'
   	},
   	controlled:{
   		type:'boolean'
   	},
-  	syncApproval:{
+  	syncapproval:{
   		type:'boolean'
   	},
-  	managerOK:{
+  	managerok:{
   		type:'boolean'
   	},
-  	fullCatalog:{
+  	fullcatalog:{
   		type:'boolean'
   	},
   	company:{
   		model:'company'
   	},
-  	inBand:{
+  	inband:{
   		type:'boolean'
   	},
   	bands:{
