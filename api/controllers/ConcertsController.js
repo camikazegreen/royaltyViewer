@@ -8,7 +8,7 @@ var apikeys = require('./apikeys.js');
 
 module.exports = {
 	view: function(req,res){
-		Client.find().populate('band')
+		Client.find().populate('bands')
 		.exec(function(e,r){
 			if(e){console.log(e)};
 // function getConcerts(city,artist){
