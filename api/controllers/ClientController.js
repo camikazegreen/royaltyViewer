@@ -17,6 +17,7 @@ module.exports = {
 		.exec(function(err,results){
 			if(err){console.log(err)};
 			for (var i = results.length - 1; i >= 0; i--) {
+				results[i].company = results[i].company.name;
 				var address = results[i].address1;
 				if(results[i].address2){address += "<br>"+results[i].address2};
 				results[i].address = "<div class='smallAddress'><div>"+address+"</div><span>"+results[i].city+", </span><span>"+results[i].state+" </span><span>"+results[i].zip+"<span></div"
