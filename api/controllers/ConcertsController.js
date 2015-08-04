@@ -54,10 +54,10 @@ function getConcerts(city,artist){
         console.log(err);
       }
       else{
-        console.log(concert);
-        for (var i = concert.string.length - 1; i >= 0; i--) {
-        	concerts.newYork.push(concert.string[i].performance[0].artist.displayName)
-        	console.log(concert.string[i].performance[0].artist.displayName)
+        var events = JSON.parse(concert.string)
+        for (var i = events.length - 1; i >= 0; i--) {
+        	concerts.newYork.push(events[i].performance[0].artist.displayName)
+        	console.log(events[i].performance[0].artist.displayName)
         };
         // concerts.newYork.push(concert);
       }
