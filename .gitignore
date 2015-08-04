@@ -41,7 +41,7 @@
 
 config/local.js
 permissions.js
-api/contollers/apikeys.js
+api/controllers/apikeys.js
 
 
 
