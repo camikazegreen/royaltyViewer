@@ -4,7 +4,7 @@
  * @description :: Server-side logic for managing concerts
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-var apikeys = require('apikeys.js');
+var apikeys = require('./apikeys.js');
 
 module.exports = {
 	view: function(req,res){
