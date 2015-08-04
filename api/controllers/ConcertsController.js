@@ -5,6 +5,7 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 var apikeys = require('./apikeys.js');
+var http = require('http');
 
 		var concerts = {};
 		concerts.newYork = [];
