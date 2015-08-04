@@ -24,7 +24,7 @@ function getConcerts(city,artist){
 		host: 'api.songkick.com',
 		path: '/api/3.0/events.json?apikey='+apikey+'&location='+city+'&artist_name='+artist
 	};
-	console.log('getting concerts for '+options.path)
+	console.log('getting concerts for '+host+options.path)
 
 	var callback = function(response){
 		var str = '';
@@ -34,6 +34,7 @@ function getConcerts(city,artist){
 		});
 
 		response.on('end', function(){
+			console.log('response = end');
 			var json = JSON.parse(str);
 			if(json.resultsPage.totalEntries>0){
 				var conString = JSON.stringify(json.resultsPage.results.event);
@@ -102,7 +103,7 @@ function getConcerts(city,artist){
 		var phoenix = "sk:23068";
 		for (var i = r.length - 1; i >= 0; i--) {
 			// concerts.newYork.push(r[i]);
-			getConcerts(newYork,r[i].performsas);
+			getConcerts(newYork,encodeURI(r[i].performsas));
 		};
 		return res.view('concerts',{concerts:concerts})
 		})
