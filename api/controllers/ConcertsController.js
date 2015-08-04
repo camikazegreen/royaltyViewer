@@ -99,7 +99,7 @@ module.exports = {
 		var tucson = "sk:10046";
 		var phoenix = "sk:23068";
 		for (var i = r.length - 1; i >= 0; i--) {
-			concerts.push(r[i]);
+			concerts.newYork.push(r[i]);
 			// getConcerts(newYork,r[i].performsas);
 		};
 		return res.view('concerts',{concerts:concerts})
