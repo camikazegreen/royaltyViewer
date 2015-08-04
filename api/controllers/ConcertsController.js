@@ -96,6 +96,8 @@ function getConcerts(city,artist){
 			}//if totalEntries > 0
 
 		});
+
+		return res.view('concerts',{concerts:concerts})
 	}
 	http.request(options, callback).end();
 }//getConcerts
@@ -109,7 +111,7 @@ function getConcerts(city,artist){
 			// concerts.newYork.push(r[i]);
 			getConcerts(newYork,encodeURI(r[i].performsas));
 		};
-		return res.view('concerts',{concerts:concerts})
+		// return res.view('concerts',{concerts:concerts})
 		})
 	}
 };
