@@ -62,7 +62,7 @@
 <div class="row">
 <div class="col-sm-3">
 <label for="companySelect">Company</label>
-<select class="form-control" id="companySelect">
+<select class="form-control" id="companySelect" name="company">
   <% for(var i=0;i<companies.length;i++){ %>
   <option value=<%= companies[i].id %>><%= companies[i].name %></option>
   <% } %>
