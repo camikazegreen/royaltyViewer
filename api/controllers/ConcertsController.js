@@ -55,7 +55,11 @@ function getConcerts(city,artist){
       }
       else{
         console.log(concert);
-        concerts.newYork.push(concert);
+        for (var i = concert.string.length - 1; i >= 0; i--) {
+        	concerts.newYork.push(concert.string[i].performance[0].artist.displayName)
+        	console.log(concert.string[i].performance[0].artist.displayName)
+        };
+        // concerts.newYork.push(concert);
       }
     });
 		}else if(city==losAngeles){
