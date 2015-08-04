@@ -58,7 +58,7 @@ module.exports = {
       type:'string'
     },
     email:{
-      type:'email'
+      type:'string'
     },
     phone:{
       type:'string'
