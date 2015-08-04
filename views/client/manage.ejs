@@ -3,6 +3,7 @@
 <script src="/js/dependencies/sails.io.js"></script>
 <script src="/js/manageclients.js"></script>
 <script src="/js/dynatable.js"></script>
+
 <!--SCRIPTS END-->
 <!--STYLES-->
 <link rel="stylesheet" href="/styles/dynatable.css">
@@ -30,3 +31,16 @@
 	<% } %>
 	<p><% JSON.stringify(clients) %></p>
 </ul>
+<script type="text/javascript">
+	var $records = $('#json-records'),
+    myRecords = JSON.parse($records.text());
+$('#client-table')
+.bind('dynatable:afterUpdate',function(e,dynatable){
+  console.log("bound function");
+})
+.dynatable({
+dataset:{
+  records: myRecords
+  }
+  })
+</script>
