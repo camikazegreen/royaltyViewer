@@ -49,7 +49,7 @@ function getConcerts(city,artist){
       }
     });
 		}else if(city==newYork){
-			concerts.newYork.push(details);
+			concerts.newYork.push(json);
 			Concerts.create({location:'newYork',string:conString}, function(err, concert){
       if (err){
         console.log(err);
