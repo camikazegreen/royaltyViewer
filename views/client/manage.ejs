@@ -17,21 +17,17 @@
 		<th>Address</th>
 		<th>Email</th>
 		<th>Company</th>
+		<th data-dynatable-column="clientrep">Rep</th>
 	</thead>
 	<tbody>
 	</tbody>
 </table>
 </div> <!-- close container -->
-<pre id="json-records" class="">
+<pre id="json-records" class="hidden">
 <% var records= JSON.stringify(clients) %>
 <%= records %>
 </pre>
-<ul>
-	<% for(var i=0;i<clients.length;i++){ %>
-	<li><%= clients[i].firstname %></li>
-	<% } %>
-	<p><% JSON.stringify(clients) %></p>
-</ul>
+
 <script type="text/javascript">
 	var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
