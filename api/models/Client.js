@@ -15,7 +15,7 @@ module.exports = {
   		type:'string'
   	},
   	performsas:{
-  		type:'array'
+  		type:'string'
   	},
   	controlled:{
   		type:'boolean'
@@ -38,7 +38,35 @@ module.exports = {
   	bands:{
   		collection:'band',
   		via:'members'
-  	}
+  	},
+    address1:{
+      type:'string'
+    },
+    address2:{
+      type:'string'
+    },
+    city:{
+      type:'string'
+    },
+    state:{
+      type:'string'
+    },
+    zip:{
+      type:'string'
+    },
+    country:{
+      type:'string'
+    },
+    email:{
+      type:'email'
+    },
+    phone:{
+      type:'string'
+    },
+    clientrep:{
+      type:'string'
+    }
+
   }
 };
 
