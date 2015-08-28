@@ -111,7 +111,7 @@ function getConcerts(city,artist){
 			// concerts.newYork.push(r[i]);
 			getConcerts(newYork,encodeURI(r[i].performsas));
 		};
-		// return res.view('concerts',{concerts:concerts})
+		 return res.view('concerts',{concerts:concerts})
 		})
 	}
 };
