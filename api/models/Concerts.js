@@ -13,6 +13,25 @@ module.exports = {
   	},
   	location:{
   		type:'string'
+  	},
+  	songkickID:{
+  		type:'string',
+  		unique:true
+  	},
+  	venue:{
+  		type:'string'
+  	},
+  	songkickPage:{
+  		type:'string'
+  	},
+  	date:{
+  		type:'string'
+  	},
+  	time:{
+  		type:'string'
+  	},
+  	artist:{
+  		type:'string'
   	}
   }
 };
