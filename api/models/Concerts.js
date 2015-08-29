@@ -26,7 +26,7 @@ module.exports = {
   		type:'string'
   	},
   	date:{
-  		type:'string'
+  		type:'date'
   	},
   	time:{
   		type:'string'

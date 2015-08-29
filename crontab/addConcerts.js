@@ -35,7 +35,7 @@ function getConcerts(city,artist){
 						venue:events[i].venue.displayName,
 						songkickID:events[i].id,
 						songkickPage:events[i].uri,
-						date:events[i].start.date,
+						date:events[i].start.datetime,
 						time:events[i].start.time,
 						artist:events[i].performance[0].artist.displayName,
 						performance:events[i].displayName

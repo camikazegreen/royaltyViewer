@@ -10,7 +10,7 @@ module.exports = {
 	view: function(req,res){
 		var concerts = {};
 		concerts.newyork = [];
-		Concerts.find({ where: { location: 'New York' }})
+		Concerts.find({ where: { location: 'New York' },date:{'>':new Date()}})
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			console.log(r);
