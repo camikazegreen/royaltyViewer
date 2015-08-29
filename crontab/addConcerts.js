@@ -1,3 +1,7 @@
+
+var apikeys = require('../api/controllers/apikeys.js');
+var http = require('http');
+
 module.exports = {
     run : function(req,res){
         console.log('do something very cool here');
@@ -49,7 +53,7 @@ function getConcerts(city,artist){
 };//end callback
 	http.request(options, callback).end();
 }//getConcerts
-		var apikey = ../api/controllers/apikeys.songkickkeys[0].apikey;
+		var apikey = apikeys.songkickkeys[0].apikey;
 		var newYork = "sk:7644";
 		var losAngeles = "sk:17835"; 
 		var nashville = "sk:11104";
