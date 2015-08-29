@@ -43,7 +43,7 @@ function getConcerts(city,artist){
       					if (err){
         					console.log(err);
       					}else{
-      						console.log(concert);
+      						console.log(concert.performance);
       					}
        			});
 			}//if totalEntries > 0

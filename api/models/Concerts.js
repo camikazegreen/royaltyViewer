@@ -32,6 +32,9 @@ module.exports = {
   	},
   	artist:{
   		type:'string'
+  	},
+  	performance:{
+  		type:'string'
   	}
   }
 };
