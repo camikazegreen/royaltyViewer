@@ -36,6 +36,10 @@ module.exports = {
   	},
   	performance:{
   		type:'string'
+  	},
+  	addedToCalendar:{
+  		type:'boolean',
+  		defaultsTo:false
   	}
   }
 };
