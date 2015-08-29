@@ -49,7 +49,7 @@ function getConcerts(city,artist){
 };//end callback
 	http.request(options, callback).end();
 }//getConcerts
-		var apikey = apikeys.songkickkeys[0].apikey;
+		var apikey = ../api/controllers/apikeys.songkickkeys[0].apikey;
 		var newYork = "sk:7644";
 		var losAngeles = "sk:17835"; 
 		var nashville = "sk:11104";
