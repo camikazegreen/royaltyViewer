@@ -8,7 +8,7 @@ module.exports = {
 		Client.find().populate('bands')
 		.exec(function(e,r){
 			if(e){console.log(e)};
-			console.log(r);
+			// console.log(r);
 function getConcerts(city,artist){
 	var options = {
 		host: 'api.songkick.com',
@@ -43,7 +43,7 @@ function getConcerts(city,artist){
       					if (err){
         					console.log(err);
       					}else{
-      						console.log(concert.performance);
+      						console.log(concert);
       					}
        			});
 			}//if totalEntries > 0
