@@ -6,7 +6,7 @@
 */
 
 module.exports = {
-
+  autoPK:false,
   attributes: {
   	string:{
   		type:'string'
@@ -16,7 +16,8 @@ module.exports = {
   	},
   	songkickID:{
   		type:'string',
-  		unique:true
+    	primaryKey: true,
+    	required: true
   	},
   	venue:{
   		type:'string'
