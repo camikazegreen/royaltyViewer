@@ -1,7 +1,6 @@
 module.exports = {
-    run : function(){
+    run : function(req,res){
         console.log('do something very cool here');
-        function(req,res){
 		Client.find().populate('bands')
 		.exec(function(e,r){
 			if(e){console.log(e)};
@@ -62,6 +61,5 @@ function getConcerts(city,artist){
 		}
 		 // return res.view('concerts',{concerts:concerts})
 		})//end exec
-	}//end anonymous function
     }//end run
 };//end module.exports
