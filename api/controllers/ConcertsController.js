@@ -16,10 +16,10 @@ module.exports = {
 		Concerts.find({ where: { location: 'New York' },date:{'>':new Date()}})
 		.exec(function(e,r){
 			if(e){console.log(e)};
-			console.log(r);
 			for (var i = r.length - 1; i >= 0; i--) {
 				concerts.newyork.push(r[i]);
 			};
+			console.log(concerts);
 		})
 		// Concerts.find({ where: { location: 'Los Angeles' },date:{'>':new Date()}})
 		// .exec(function(e,r){
