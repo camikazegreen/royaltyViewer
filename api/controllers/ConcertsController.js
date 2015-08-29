@@ -8,7 +8,7 @@
 
 module.exports = {
 	view: function(req,res){
-		Concert.find()
+		Concerts.find()
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			console.log(r);
