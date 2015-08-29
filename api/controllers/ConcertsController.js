@@ -56,8 +56,8 @@ function getConcerts(city,artist){
       else{
         var events = JSON.parse(concert.string)
         for (var i = events.length - 1; i >= 0; i--) {
-        	concerts.newYork.push(events[i].performance[0].artist.displayName)
-        	console.log(events[i].performance[0].artist.displayName)
+        	concerts.newYork.push(events[i].performance[0].displayName)
+        	console.log(events[i].performance[0].displayName)
         };
         // concerts.newYork.push(concert);
       }
