@@ -11,7 +11,7 @@ module.exports = {
 		var counter = 0;
 		var today = new Date();
 		var oneMonth = today.setMonth(today.getMonth() + 1);
-		console.log(oneMonth);
+		console.log(today,oneMonth);
 		var concerts = {};
 		concerts.newyork = [];
 		concerts.losAngeles = [];
