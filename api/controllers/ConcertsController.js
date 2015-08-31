@@ -20,6 +20,8 @@ module.exports = {
 				concerts.newyork.push(r[i]);
 			};
 			console.log(concerts);
+			
+		 return res.view('concerts',{concerts:concerts})
 		})
 		// Concerts.find({ where: { location: 'Los Angeles' },date:{'>':new Date()}})
 		// .exec(function(e,r){
@@ -57,7 +59,6 @@ module.exports = {
 
 
 
-		 return res.view('concerts',{concerts:concerts})
 	}
 };
 
