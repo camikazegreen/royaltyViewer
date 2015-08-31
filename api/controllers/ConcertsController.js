@@ -25,7 +25,7 @@ module.exports = {
 			counter++;console.log("NY="+counter);
 			checkDone();
 		})
-		Concerts.find({ where: { location: 'Los Angeles' },date:{'>':new Date()}, sort: 'date DESC'})
+		Concerts.find({ where: { location: 'Los Angeles' },date:{'>':new Date(),'<':oneMonth}, sort: 'date DESC'})
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			for (var i = r.length - 1; i >= 0; i--) {
@@ -34,7 +34,7 @@ module.exports = {
 			counter++;console.log("LA="+counter);
 			checkDone();
 		})
-		Concerts.find({ where: { location: 'Nashville' },date:{'>':new Date()}, sort: 'date DESC'})
+		Concerts.find({ where: { location: 'Nashville' },date:{'>':new Date(),'<':oneMonth}, sort: 'date DESC'})
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			console.log(r);
@@ -44,17 +44,17 @@ module.exports = {
 			counter++;console.log("NV="+counter);
 			checkDone();
 		})
-		Concerts.find({ where: { location: 'Tucson' },date:{'>':new Date()}, sort: 'date DESC'})
+		Concerts.find({ where: { location: 'Tucson' },date:{'>':new Date(),'<':oneMonth}, sort: 'date DESC'})
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			console.log(r);
 			for (var i = r.length - 1; i >= 0; i--) {
 				concerts.arizona.push(r[i]);
 			};
-			counter++;
+			counter++;"Tucson="+counter
 			checkDone();
 		})
-		Concerts.find({ where: { location: 'Phoenix' },date:{'>':new Date()}, sort: 'date DESC'})
+		Concerts.find({ where: { location: 'Phoenix' },date:{'>':new Date(),'<':oneMonth}, sort: 'date DESC'})
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			console.log(r);
@@ -66,7 +66,7 @@ module.exports = {
 		})
 
 		function checkDone(){
-			if(counter==4){	
+			if(counter==5){	
 		 		return res.view('concerts',{concerts:concerts})
 			}
 		}

@@ -62,7 +62,10 @@ function getConcerts(city,artist){
 		for (var i = r.length - 1; i >= 0; i--) {
 			// concerts.newYork.push(r[i]);
 			getConcerts(newYork,encodeURI(r[i].performsas));
-			console.log(r[i]);
+			getConcerts(losAngeles,encodeURI(r[i].performsas));
+			getConcerts(nashville,encodeURI(r[i].performsas));
+			getConcerts(tucson,encodeURI(r[i].performsas));
+			getConcerts(phoenix,encodeURI(r[i].performsas));
 		}
 		 // return res.view('concerts',{concerts:concerts})
 		})//end exec
