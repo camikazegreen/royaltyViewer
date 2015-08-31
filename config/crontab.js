@@ -7,7 +7,7 @@ module.exports.crontab = {
    * so in the example below it will run every minute
    */
 
-  '* * * *': function(){
+  '30 * * * *': function(){
       require('../crontab/addConcerts.js').run();
   }
 };
