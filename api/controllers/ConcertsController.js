@@ -10,8 +10,8 @@ module.exports = {
 	view: function(req,res){
 		var counter = 0;
 		var today = new Date();
-		var oneMonth = today.setMonth(today.getMonth() + 12);
-		console.log(today,oneMonth);
+		var oneMonth = today.setMonth(today.getMonth() + 1);
+		console.log(oneMonth);
 		var concerts = {};
 		concerts.newyork = [];
 		concerts.losAngeles = [];
