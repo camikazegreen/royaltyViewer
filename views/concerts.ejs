@@ -13,9 +13,41 @@
 <% var records= JSON.stringify(concerts) %>
 <%= records %>
 </pre>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6">
 <h1>New York</h1>
 <ul>
 	<% _.each(concerts.newyork, function(concert){ %>
-	<li><%= concerts.newyork %></li>
+	<li><%= concert.performance %></li>
 	<% }) %>
 </ul>
+</div>
+	<div class="col-sm-6">
+		<h1>Nashville</h1>
+		<ul>
+		<% _.each(concerts.nashville, function(concert){ %>
+		<li><%= concert.performance %></li>
+		<% }) %>
+	</ul>
+</div>
+</div>
+	<div class="row">
+	<div class="col-sm-6">
+<h1>Los Angeles</h1>
+<ul>
+	<% _.each(concerts.losangeles, function(concert){ %>
+	<li><%= concert.performance %></li>
+	<% }) %>
+</ul>
+</div>
+	<div class="col-sm-6">
+		<h1>Arizona</h1>
+		<ul>
+		<% _.each(concerts.arizona, function(concert){ %>
+		<li><%= concert.performance %></li>
+		<% }) %>
+	</ul>
+</div>
+</div>
+</div> <!-- container -->
