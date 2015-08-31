@@ -13,14 +13,14 @@ module.exports = {
 		concerts.losAngeles = [];
 		concerts.nashville = [];
 		concerts.arizona = [];
-		Concerts.find({ where: { location: 'New York' },date:{'>':new Date()}})
+		Concerts.find({ where: { location: 'New York' },date:{'>':new Date()}, sort: 'date DESC'})
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			for (var i = r.length - 1; i >= 0; i--) {
 				concerts.newyork.push(r[i]);
 			};
 			console.log(concerts);
-			
+
 		 return res.view('concerts',{concerts:concerts})
 		})
 		// Concerts.find({ where: { location: 'Los Angeles' },date:{'>':new Date()}})

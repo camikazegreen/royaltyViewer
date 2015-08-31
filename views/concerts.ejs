@@ -13,4 +13,9 @@
 <% var records= JSON.stringify(concerts) %>
 <%= records %>
 </pre>
-
+<h1>New York</h1>
+<ul>
+	<% _.each(concerts.newyork, function(concert){ %>
+	<li><%= concerts.newyork %></li>
+	<% }) %>
+</ul>
