@@ -8,6 +8,9 @@
 module.exports = {
 
   attributes: {
+    entity:{
+      type:'string'
+    },
   	firstname:{
   		type:'string'
   	},

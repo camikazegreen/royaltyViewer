@@ -10,6 +10,7 @@
     <li role="presentation"><a href="#userAccount" aria-controls="userAccount" role="tab" data-toggle="tab">User Account</a></li>
     <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
     <li role="presentation"><a href="#import" aria-controls="import" role="tab" data-toggle="tab">Import CSV</a></li>
+    <li role="presentation"><a href="#advanced" aria-controls="advanced" role="tab" data-toggle="tab">Advanced</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -19,6 +20,12 @@
       <form action="/client/create" enctype="multipart/form-data" method="post">
 
   <legend>Basic Details</legend>
+  <div class="row">
+    <div class="col-sm-6">
+      <label for="inputEntity">Operates as an Entity?</label>
+      <input type="text" class="form-control" id="entityName" name="entity" placeholder="Entity Name">
+    </div>
+  </div>
         <div class="row">
   <div class="form-group">
     <div class="col-sm-3">
@@ -633,5 +640,31 @@
       </div>
     </div><!-- Close notes tab div -->
     <div role="tabpanel" class="tab-pane" id="import">This is where I will put the ability to import clients from CSV</div>
+    <div role="tabpanel" class="tab-pane" id="advanced">   
+    <div class="col-sm-3">
+      <label for="">Music Maestro ID</label>
+      <input type="text" class="form-control" id="musicMaestroID" name="musicMaestroID" placeholder="12345">
+    </div>
+    <div class="col-sm-3">
+      <label for="">QuickBooks ID</label>
+      <input type="text" class="form-control" id="quickbooksID" name="quickbooksID" placeholder="123">
+    </div>
+    <div class="col-sm-3">
+      <label for="">Royalty Viewer ID</label>
+      <input type="text" class="form-control" id="royaltyViewerID" name="royaltyViewerID" placeholder="1234">
+    </div>
+    <div class="col-sm-3">
+      <label for="">MusicBrainz ID</label>
+      <input type="text" class="form-control" id="musicBrainzID" name="musicBrainzID" placeholder="9341a67c-4f0c-43c2-9ec4-c222d2cb97f3">
+    </div>
+    <div class="col-sm-3">
+      <label for="">Echonest ID</label>
+      <input type="text" class="form-control" id="echonestID" name="echonestID" placeholder="1234567890">
+    </div>
+    <div class="col-sm-3">
+      <label for="">Songkick ID</label>
+      <input type="text" class="form-control" id="songkickID" name="songkickID" placeholder="154192">
+    </div>
+    </div>
 </div>
 </div>
