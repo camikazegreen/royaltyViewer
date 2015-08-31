@@ -9,9 +9,8 @@
 module.exports = {
 	view: function(req,res){
 		var counter = 0;
-		var today = new Date();
-		var oneMonth = today.setMonth(today.getMonth() + 1);
-		console.log(today,oneMonth);
+		var oneMonth = new Date();
+		oneMonth.setMonth(oneMonth.getMonth() + 1);
 		var concerts = {};
 		concerts.newyork = [];
 		concerts.losAngeles = [];
