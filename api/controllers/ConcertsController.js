@@ -51,7 +51,7 @@ module.exports = {
 			for (var i = r.length - 1; i >= 0; i--) {
 				concerts.arizona.push(r[i]);
 			};
-			counter++;"Tucson="+counter
+			counter++;console.log("Tucson="+counter);
 			checkDone();
 		})
 		Concerts.find({ where: { location: 'Phoenix' },date:{'>':new Date(),'<':oneMonth}, sort: 'date DESC'})
