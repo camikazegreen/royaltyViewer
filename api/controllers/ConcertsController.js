@@ -9,12 +9,15 @@
 module.exports = {
 	view: function(req,res){
 		var counter = 0;
+		var today = new Date();
+		var oneMonth = today.setMonth(CurrentDate.getMonth() + 12);
+		console.log(today,oneMonth);
 		var concerts = {};
 		concerts.newyork = [];
 		concerts.losAngeles = [];
 		concerts.nashville = [];
 		concerts.arizona = [];
-		Concerts.find({ where: { location: 'New York' },date:{'>':new Date()}, sort: 'date DESC'})
+		Concerts.find({ where: { location: 'New York' },date:{'>':new Date(),'<':oneMonth}, sort: 'date DESC'})
 		.exec(function(e,r){
 			if(e){console.log(e)};
 			for (var i = r.length - 1; i >= 0; i--) {
