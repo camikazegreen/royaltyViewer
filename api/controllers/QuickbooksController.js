@@ -43,6 +43,8 @@ callback: function(req, res){
 			realmId: req.query.realmId
 		}
 	}
+	console.log("req.query: ",req.query);
+	console.log("req.session: ",req.session);
 	console.log("postBody is ",postBody);
 	request.post(postBody,function(e,r,data){
 		var accessToken = qs.parse(data);
