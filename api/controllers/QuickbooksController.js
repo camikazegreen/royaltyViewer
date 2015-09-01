@@ -56,11 +56,11 @@ callback: function(req, res){
 			true,
 			true);
 
-		qbo.findAccounts(function(_, accounts){
-			accounts.QueryResponse.Account.forEach(function(account){
-				console.log(account.Name)
-			})
-		})
+		// qbo.findAccounts(function(_, accounts){
+		// 	accounts.QueryResponse.Account.forEach(function(account){
+		// 		console.log(account.Name)
+		// 	})
+		// })
 	})
 }
 };
