@@ -68,11 +68,12 @@ callback: function(req, res){
 			true,
 			true);
 
-		// qbo.findAccounts(function(_, accounts){
-		// 	accounts.QueryResponse.Account.forEach(function(account){
-		// 		console.log(account.Name)
-		// 	})
-		// })
+		qbo.findAccounts(function(_, accounts){
+			accounts.QueryResponse.Account.forEach(function(account){
+				console.log(account.Name)
+			})
+		})
+	res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')¬
 	})
 }
 };
