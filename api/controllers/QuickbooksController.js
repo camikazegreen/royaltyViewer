@@ -9,11 +9,13 @@ var request = require('request');
 var qs = require('querystring');
 var QuickBooks = require('node-quickbooks');
 var express = require('express');
+var cookieParser = require('cookie-parser')
 var app = express();
 var consumerKey	= apikeys.quickbooks[0].consumerKey;
 var consumerSecret = apikeys.quickbooks[0].consumerSecret;
 
-app.use(express.cookieParser('brad'));
+
+app.use(cookieParser('brad'));
 app.use(express.session({secret: 'smith'}));
 
 module.exports = {
