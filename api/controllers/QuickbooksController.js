@@ -14,6 +14,7 @@ var session = require('express-session');
 var app = express();
 var consumerKey	= apikeys.quickbooks[0].consumerKey;
 var consumerSecret = apikeys.quickbooks[0].consumerSecret;
+var token;
 
 
 app.use(cookieParser('brad'));
@@ -35,6 +36,7 @@ RequestTokenServlet: function(req,res){
 	request.post(postBody,function(e,r,data){
 		var requestToken = qs.parse(data)
 		console.log("request token is ",requestToken)
+		token = requestToken.oath_token_secret;
 		req.session.oath_token_secret = requestToken.oath_token_secret;
 		res.redirect(QuickBooks.APP_CENTER_URL + requestToken.oauth_token)
 	})
@@ -46,7 +48,7 @@ callback: function(req, res){
 			consumer_key: consumerKey,
 			consumer_secret: consumerSecret,
 			token: req.query.oauth_token,
-			token_secret: req.session.oauth_token_secret,
+			token_secret: token,
 			verifier: req.query.oauth_verifier,
 			realmId: req.query.realmId
 		}
