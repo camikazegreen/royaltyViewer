@@ -8,14 +8,14 @@ var apikeys = require('./apikeys.js')
 var request = require('request')
 var qs = require('querystring')
 var QuickBooks = require('node-quickbooks')
+var consumerKey	= apikeys.quickbooks[0].consumerKey;
+var consumerSecret = apikeys.quickbooks[0].consumerSecret;
 
 module.exports = {
 	manage: function(req,res){
 	return res.view('quickbooks',{users:"none"})
 },
 RequestTokenServlet: function(req,res){
-	var consumerKey	= apikeys.quickbooks[0].consumerKey;
-	var consumerSecret = apikeys.quickbooks[0].consumerSecret;
 	var postBody = {
 		url: 'https://oauth.intuit.com/oauth/v1/get_request_token',
 		oauth: {
