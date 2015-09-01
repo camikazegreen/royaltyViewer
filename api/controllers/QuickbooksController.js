@@ -38,6 +38,7 @@ RequestTokenServlet: function(req,res){
 		console.log("request token is ",requestToken)
 		token = requestToken.oath_token_secret;
 		req.session.oath_token_secret = requestToken.oath_token_secret;
+		req.session.cookie = requestToken.oath_token_secret;
 		res.redirect(QuickBooks.APP_CENTER_URL + requestToken.oauth_token)
 	})
 },
@@ -48,7 +49,7 @@ callback: function(req, res){
 			consumer_key: consumerKey,
 			consumer_secret: consumerSecret,
 			token: req.query.oauth_token,
-			token_secret: token,
+			token_secret: req.session.cookie,
 			verifier: req.query.oauth_verifier,
 			realmId: req.query.realmId
 		}
