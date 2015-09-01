@@ -4,12 +4,17 @@
  * @description :: Server-side logic for managing quickbooks
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-var apikeys = require('./apikeys.js')
-var request = require('request')
-var qs = require('querystring')
-var QuickBooks = require('node-quickbooks')
+var apikeys = require('./apikeys.js');
+var request = require('request');
+var qs = require('querystring');
+var QuickBooks = require('node-quickbooks');
+var express = require('express');
+var app = express();
 var consumerKey	= apikeys.quickbooks[0].consumerKey;
 var consumerSecret = apikeys.quickbooks[0].consumerSecret;
+
+app.use(express.cookieParser('brad'));
+app.use(express.session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
