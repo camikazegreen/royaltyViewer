@@ -9,14 +9,15 @@ var request = require('request');
 var qs = require('querystring');
 var QuickBooks = require('node-quickbooks');
 var express = require('express');
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var app = express();
 var consumerKey	= apikeys.quickbooks[0].consumerKey;
 var consumerSecret = apikeys.quickbooks[0].consumerSecret;
 
 
 app.use(cookieParser('brad'));
-app.use(express.session({secret: 'smith'}));
+app.use(session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
