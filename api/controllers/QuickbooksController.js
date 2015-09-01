@@ -50,8 +50,8 @@ callback: function(req, res){
 		qbo = new QuickBooks(
 			consumerKey,
 			consumerSecret,
-			accessToken.oauth_token,
-			accessToken.oauth_token_secret,
+			apikeys.quickbooks[0].accessToken,
+			apikeys.quickbooks[0].accessTokenSecret,
 			postBody.oauth.realmId,
 			true,
 			true);
