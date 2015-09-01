@@ -73,7 +73,7 @@ callback: function(req, res){
 				console.log(account.Name)
 			})
 		})
-	res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')¬
+		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
 	})
 }
 };
