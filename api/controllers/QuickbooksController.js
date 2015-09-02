@@ -66,7 +66,7 @@ callback: function(req, res){
 			false,//sandbox
 			true);//debugging
 
-		qbo.findVendors(function(vendors){
+		qbo.findVendors('where Vendor1099=false',function(vendors){
 			console.log(vendors.QueryResponse)
 		})
 		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
