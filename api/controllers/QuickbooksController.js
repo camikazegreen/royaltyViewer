@@ -66,10 +66,8 @@ callback: function(req, res){
 			false,//sandbox
 			true);//debugging
 
-		qbo.findAccounts(function(_, accounts){
-			accounts.QueryResponse.Account.forEach(function(account){
-				console.log(account.Name)
-			})
+		qbo.findVendors(function(vendors){
+			console.log(vendors.QueryResponse)
 		})
 		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
 	})
