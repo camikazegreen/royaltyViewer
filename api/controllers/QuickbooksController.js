@@ -34,7 +34,6 @@ RequestTokenServlet: function(req,res){
 	}
 	request.post(postBody,function(e,r,data){
 		var requestToken = qs.parse(data)
-		console.log("request token is ",requestToken)
 		req.session.oauth_token_secret = requestToken.oauth_token_secret;
 		res.redirect(QuickBooks.APP_CENTER_URL + requestToken.oauth_token)
 	})
@@ -56,7 +55,6 @@ callback: function(req, res){
 	console.log("postBody is ",postBody);
 	request.post(postBody,function(e,r,data){
 		var accessToken = qs.parse(data);
-		console.log(accessToken);
 		console.log(postBody.oauth.realmId);
 
 		qbo = new QuickBooks(
