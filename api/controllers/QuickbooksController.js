@@ -50,9 +50,6 @@ callback: function(req, res){
 			realmId: req.query.realmId
 		}
 	}
-	console.log("req.query: ",req.query);
-	console.log("req.session: ",req.session);
-	console.log("postBody is ",postBody);
 	request.post(postBody,function(e,r,data){
 		var accessToken = qs.parse(data);
 		console.log(postBody.oauth.realmId);
@@ -66,8 +63,10 @@ callback: function(req, res){
 			false,//sandbox
 			true);//debugging
 
-		qbo.findVendors('where Vendor1099=false',function(vendors){
-			console.log(vendors.QueryResponse)
+		qbo.findVendors({
+			Vendor1099:true
+		},function(vendors){
+			console.log(vendors)
 		})
 		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
 	})
