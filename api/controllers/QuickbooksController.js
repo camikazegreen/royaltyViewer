@@ -65,8 +65,8 @@ callback: function(req, res){
 			accessToken.oauth_token,
 			accessToken.oauth_token_secret,
 			postBody.oauth.realmId,
-			true,
-			true);
+			false,//sandbox
+			true);//debugging
 
 		qbo.findAccounts(function(_, accounts){
 			accounts.QueryResponse.Account.forEach(function(account){
