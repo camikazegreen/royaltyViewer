@@ -21,11 +21,11 @@ app.use(session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
-	response.status(200).set('Content-Type', 'text/plain');;
+	res.status(200).set('Content-Type', 'text/plain');;
 	for(var i = 0; i < 10; i++){
-	 	response.write(i);
+	 	res.write(i);
  	}
- 	return response.end();
+ 	return res.end();
 	// return res.view('quickbooks',{vendors:"none"})
 },
 RequestTokenServlet: function(req,res){
