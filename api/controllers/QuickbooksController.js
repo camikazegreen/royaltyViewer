@@ -22,7 +22,7 @@ app.use(session({secret: 'smith'}));
 module.exports = {
 	manage: function(req,res){
 	response.status(200).set('Content-Type', 'text/plain');;
-	for(var i = 0; i < 10, i++){
+	for(var i = 0; i < 10; i++){
 	 	response.write(i);
  	}
  	return response.end();
@@ -37,6 +37,7 @@ RequestTokenServlet: function(req,res){
 			consumer_secret: consumerSecret
 		}
 	}
+
 	request.post(postBody,function(e,r,data){
 		var requestToken = qs.parse(data)
 		req.session.oauth_token_secret = requestToken.oauth_token_secret;
