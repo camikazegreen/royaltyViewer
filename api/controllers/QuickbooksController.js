@@ -21,7 +21,7 @@ app.use(session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
-	return res.view('quickbooks',{users:"none"})
+	return res.view('quickbooks',{vendors:"none"})
 },
 RequestTokenServlet: function(req,res){
 	var postBody = {
