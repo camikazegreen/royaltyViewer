@@ -21,7 +21,12 @@ app.use(session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
-	return res.view('quickbooks',{vendors:"none"})
+	response.status(200).set('Content-Type', 'text/plain');;
+	for(var i = 0; i < 10, i++){
+	 	response.write(i);
+ 	}
+ 	return response.end();
+	// return res.view('quickbooks',{vendors:"none"})
 },
 RequestTokenServlet: function(req,res){
 	var postBody = {
