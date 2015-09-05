@@ -21,14 +21,9 @@ app.use(session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
-	res.status(200).set('Content-Type', 'text/plain');;
-	for(var i = 0; i < 10; i++){
-	 	res.write(i);
- 	}
- 	return res.end();
-	// return res.view('quickbooks',{vendors:"none"})
-},
-RequestTokenServlet: function(req,res){
+	return res.view('quickbooks',{vendors:"none"})
+	},
+	RequestTokenServlet: function(req,res){
 	var postBody = {
 		url: 'https://oauth.intuit.com/oauth/v1/get_request_token',
 		oauth: {
@@ -43,8 +38,8 @@ RequestTokenServlet: function(req,res){
 		req.session.oauth_token_secret = requestToken.oauth_token_secret;
 		res.redirect(QuickBooks.APP_CENTER_URL + requestToken.oauth_token)
 	})
-},
-callback: function(req, res){
+	},
+	callback: function(req, res){
 	var postBody = {
 		url: QuickBooks.ACCESS_TOKEN_URL,
 		oauth: {
