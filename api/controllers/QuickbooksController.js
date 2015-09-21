@@ -23,9 +23,10 @@ module.exports = {
 	manage: function(req,res){
 	console.log(req.session.passport);
 	var currentUser = req.session.passport.user;
-	 Quickbooks.find({where:{user:currentUser}})
+	 Quickbooks.find({user:currentUser})
 	 .exec(function(err,results){
-	 	console.log(results)
+	 	console.log(err);
+	 	console.log(results);
 	 })
 	return res.view('quickbooks/unauthorized',{vendors:"none"})
 	},
