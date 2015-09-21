@@ -76,7 +76,7 @@ module.exports = {
 			accessTokenSecret:accessToken.oath_token_secret,
 			realmId:postBody.oauth.realmId
 		}).exec(function(err,data){
-			if err(console.log(err));
+			if (err){console.log(err)};
 			console.log(data)
 		})
 	// 	qbo.findVendors(function(vendors){
