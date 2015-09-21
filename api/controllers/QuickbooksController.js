@@ -72,7 +72,7 @@ module.exports = {
 			true);//debugging
 
 		Quickbooks.create({
-			user:req.cookie.passport.user,
+			user:req.session.passport.user,
 			accessToken:accessToken.oauth_token,
 			accessTokenSecret:accessToken.oath_token_secret,
 			realmId:postBody.oauth.realmId
