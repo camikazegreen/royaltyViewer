@@ -27,8 +27,25 @@ module.exports = {
 	 .exec(function(err,results){
 	 	console.log(err);
 	 	console.log(results);
+	 	if (results == []){
+			return res.view('quickbooks/unauthorized',{vendors:"none"})
+	 	};
+
+		qbo = new QB(
+			consumerKey,
+			consumerSecret,
+			results[0].accessToken,
+			results[0].accessTokenSecret,
+			results[0].realmId,
+			false,//sandbox
+			true);//debugging
+
+		qbo.findVendors(function(vendors){
+			console.log(vendors);
+			return res.view('quickbooks/unauthorized',{vendors:vendors})
+		})
+
 	 })
-	return res.view('quickbooks/unauthorized',{vendors:"none"})
 	},
 	RequestTokenServlet: function(req,res){
 	var postBody = {
