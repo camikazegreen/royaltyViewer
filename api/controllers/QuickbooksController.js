@@ -21,6 +21,7 @@ app.use(session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
+	console.log(req.session);
 	return res.view('quickbooks',{vendors:"none"})
 	},
 	RequestTokenServlet: function(req,res){
@@ -71,6 +72,12 @@ module.exports = {
 
 		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
 	})
+	},
+	vendors: function(req,res){
+		qbo.findVendors(function(vendors){
+			console.log(vendors);
+	// return res.view('quickbooks',{vendors:vendors})
+		})
 }
 };
 
