@@ -74,7 +74,7 @@ module.exports = {
 		Quickbooks.create({
 			user:req.session.passport.user,
 			accessToken:accessToken.oauth_token,
-			accessTokenSecret:accessToken.oath_token_secret,
+			accessTokenSecret:accessToken.oauth_token_secret,
 			realmId:postBody.oauth.realmId
 		}).exec(function(err,data){
 			if (err){console.log(err)};
