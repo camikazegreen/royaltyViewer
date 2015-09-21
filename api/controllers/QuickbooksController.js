@@ -7,7 +7,7 @@
 var apikeys = require('./apikeys.js');
 var request = require('request');
 var qs = require('querystring');
-var QuickBooks = require('node-quickbooks');
+var QB = require('node-quickbooks');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -22,7 +22,12 @@ app.use(session({secret: 'smith'}));
 module.exports = {
 	manage: function(req,res){
 	console.log(req.session);
-	return res.view('quickbooks',{vendors:"none"})
+	var currentUser = req.session.cookie.passport.user;
+	 Quickbooks.find({where:{user:currentUser}})
+	 .exec(function(err,results){
+	 	console.log(results)
+	 })
+	return res.view('quickbooks/unauthorized',{vendors:"none"})
 	},
 	RequestTokenServlet: function(req,res){
 	var postBody = {
@@ -37,12 +42,12 @@ module.exports = {
 	request.post(postBody,function(e,r,data){
 		var requestToken = qs.parse(data)
 		req.session.oauth_token_secret = requestToken.oauth_token_secret;
-		res.redirect(QuickBooks.APP_CENTER_URL + requestToken.oauth_token)
+		res.redirect(QB.APP_CENTER_URL + requestToken.oauth_token)
 	})
 	},
 	callback: function(req, res){
 	var postBody = {
-		url: QuickBooks.ACCESS_TOKEN_URL,
+		url: QB.ACCESS_TOKEN_URL,
 		oauth: {
 			consumer_key: consumerKey,
 			consumer_secret: consumerSecret,
@@ -56,7 +61,7 @@ module.exports = {
 		var accessToken = qs.parse(data);
 		console.log(postBody.oauth.realmId);
 
-		qbo = new QuickBooks(
+		qbo = new QB(
 			consumerKey,
 			consumerSecret,
 			accessToken.oauth_token,
@@ -65,10 +70,19 @@ module.exports = {
 			false,//sandbox
 			true);//debugging
 
-		qbo.findVendors(function(vendors){
-			console.log(vendors);
-	// return res.view('quickbooks',{vendors:vendors})
+		Quickbooks.create({
+			user:req.cookie.passport.user,
+			accessToken:accessToken.oauth_token,
+			accessTokenSecret:accessToken.oath_token_secret,
+			realmId:postBody.oauth.realmId
+		}).exec(function(err,data){
+			if err(console.log(err));
+			console.log(data)
 		})
+	// 	qbo.findVendors(function(vendors){
+	// 		console.log(vendors);
+	// // return res.view('quickbooks',{vendors:vendors})
+	// 	})
 
 		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
 	})

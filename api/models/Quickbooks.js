@@ -8,7 +8,18 @@
 module.exports = {
 
   attributes: {
-
+  	user:{
+  		model:'User'
+  	},
+  	accessToken:{
+  		type:'string'
+  	},
+  	accessTokenSecret:{
+  		type:'string'
+  	},
+  	realmId:{
+  		type:'string'
+  	}
   }
 };
 
