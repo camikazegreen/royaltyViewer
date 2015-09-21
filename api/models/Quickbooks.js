@@ -9,7 +9,8 @@ module.exports = {
 
   attributes: {
   	user:{
-  		model:'User'
+  		model:'User',
+  		unique:true
   	},
   	accessToken:{
   		type:'string'
