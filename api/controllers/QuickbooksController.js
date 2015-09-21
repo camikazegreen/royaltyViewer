@@ -21,7 +21,7 @@ app.use(session({secret: 'smith'}));
 
 module.exports = {
 	manage: function(req,res){
-	console.log(req.session.passport);
+	console.log(req.session);
 	var currentUser = req.session.passport.user;
 	 Quickbooks.find({user:currentUser})
 	 .exec(function(err,results){
