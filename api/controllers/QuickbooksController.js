@@ -34,7 +34,7 @@ module.exports = {
 		qbo = new QB(
 			consumerKey,
 			consumerSecret,
-			results[0].accessToken,
+			req.session.oauth_token,
 			req.session.oauth_token_secret,
 			results[0].realmId,
 			false,//sandbox
@@ -75,12 +75,13 @@ module.exports = {
 			realmId: req.query.realmId
 		}
 	}
+	req.session.oauth_token = requestToken.oauth_token;
 	request.post(postBody,function(e,r,data){
 		var accessToken = qs.parse(data);
 		console.log(postBody.oauth.realmId);
 
 	console.log('Hitting the request with this for oauth: ',data);
-	
+
 		qbo = new QB(
 			consumerKey,
 			consumerSecret,
@@ -90,15 +91,15 @@ module.exports = {
 			false,//sandbox
 			true);//debugging
 
-		Quickbooks.create({
-			user:req.session.passport.user,
-			accessToken:accessToken.oauth_token,
-			accessTokenSecret:accessToken.oauth_token_secret,
-			realmId:postBody.oauth.realmId
-		}).exec(function(err,data){
-			if (err){console.log(err)};
-			console.log(data)
-		})
+		// Quickbooks.create({
+		// 	user:req.session.passport.user,
+		// 	accessToken:accessToken.oauth_token,
+		// 	accessTokenSecret:accessToken.oauth_token_secret,
+		// 	realmId:postBody.oauth.realmId
+		// }).exec(function(err,data){
+		// 	if (err){console.log(err)};
+		// 	console.log(data)
+		// })
 		qbo.findVendors(function(vendors){
 			console.log(vendors);
 	// return res.view('quickbooks',{vendors:vendors})
