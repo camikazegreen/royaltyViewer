@@ -99,10 +99,10 @@ module.exports = {
 			if (err){console.log(err)};
 			console.log(data)
 		})
-	// 	qbo.findVendors(function(vendors){
-	// 		console.log(vendors);
-	// // return res.view('quickbooks',{vendors:vendors})
-	// 	})
+		qbo.findVendors(function(vendors){
+			console.log(vendors);
+	// return res.view('quickbooks',{vendors:vendors})
+		})
 
 		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
 	})
