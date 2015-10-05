@@ -100,7 +100,7 @@ module.exports = {
 		// 	if (err){console.log(err)};
 		// 	console.log(data)
 		// })
-		qbo.findVendors("where GivenName = 'Alison'",function(err,vendors){
+		qbo.findVendors(" where GivenName = 'Alison'",function(err,vendors){
 			console.log(vendors);
 			return res.view('quickbooks/unauthorized',{vendors:vendors})
 		})
