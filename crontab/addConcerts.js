@@ -30,7 +30,7 @@ function getConcerts(city,artist){
 				var conString = JSON.stringify(json.resultsPage.results.event);
 				var events = json.resultsPage.results.event;
 				for (var i = events.length - 1; i >= 0; i--) {
-					Concerts.create({
+					Concerts.findOrCreate({songkickID:events[i].id},{
 						location:events[i].venue.metroArea.displayName,
 						venue:events[i].venue.displayName,
 						songkickID:events[i].id,

@@ -94,15 +94,15 @@ module.exports = {
 			false,//sandbox
 			true);//debugging
 
-		// Quickbooks.create({
-		// 	user:req.session.passport.user,
-		// 	accessToken:accessToken.oauth_token,
-		// 	accessTokenSecret:accessToken.oauth_token_secret,
-		// 	realmId:postBody.oauth.realmId
-		// }).exec(function(err,data){
-		// 	if (err){console.log(err)};
-		// 	console.log(data)
-		// })
+		Quickbooks.findOrCreate({user:req.session.passport.user},{
+			user:req.session.passport.user,
+			accessToken:accessToken.oauth_token,
+			accessTokenSecret:accessToken.oauth_token_secret,
+			realmId:postBody.oauth.realmId
+		}).exec(function(err,data){
+			if (err){console.log(err)};
+			console.log(data)
+		})
 		qbo.findVendors(" where GivenName = 'Alison'",function(err,vendors){
 			console.log(vendors);
 			return res.view('quickbooks/unauthorized',{vendors:vendors})
