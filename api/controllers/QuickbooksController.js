@@ -102,7 +102,7 @@ module.exports = {
 		// })
 		qbo.findVendors(function(vendors){
 			console.log(vendors);
-			return res.view('quickbooks',{vendors:vendors})
+			return res.view('quickbooks/unauthorized',{vendors:vendors})
 		})
 
 		// res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
