@@ -94,7 +94,7 @@ module.exports = {
 			false,//sandbox
 			true);//debugging
 
-		Quickbooks.findOrCreate({user:req.session.passport.user},{
+		Quickbooks.update({user:req.session.passport.user},{
 			user:req.session.passport.user,
 			accessToken:accessToken.oauth_token,
 			accessTokenSecret:accessToken.oauth_token_secret,
