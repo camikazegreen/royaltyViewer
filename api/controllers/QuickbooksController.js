@@ -34,8 +34,8 @@ module.exports = {
 		qbo = new QB(
 			consumerKey,
 			consumerSecret,
-			req.session.oauth_token,
-			req.session.oauth_token_secret,
+			results[0].oauth_token,
+			results[0].oauth_token_secret,
 			results[0].realmId,
 			false,//sandbox
 			true);//debugging
@@ -102,10 +102,10 @@ module.exports = {
 		// })
 		qbo.findVendors(function(vendors){
 			console.log(vendors);
-	// return res.view('quickbooks',{vendors:vendors})
+			return res.view('quickbooks',{vendors:vendors})
 		})
 
-		res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
+		// res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
 	})
 	},
 	vendors: function(req,res){
