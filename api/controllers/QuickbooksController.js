@@ -75,7 +75,7 @@ module.exports = {
 			realmId: req.query.realmId
 		}
 	}
-	req.session.oauth_token = requestToken.oauth_token;
+	req.session.oauth_token = req.query.oauth_token;
 	request.post(postBody,function(e,r,data){
 		var accessToken = qs.parse(data);
 		console.log(postBody.oauth.realmId);
