@@ -35,7 +35,7 @@ module.exports = {
 			consumerKey,
 			consumerSecret,
 			results[0].accessToken,
-			results[0].accessTokenSecret,
+			req.session.oauth_token_secret,
 			results[0].realmId,
 			false,//sandbox
 			true);//debugging
