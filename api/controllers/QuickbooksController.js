@@ -40,7 +40,7 @@ module.exports = {
 			false,//sandbox
 			true);//debugging
 
-		qbo.findVendors("where GivenName = 'Alison'",function(vendors){
+		qbo.findVendors("where GivenName = 'Alison'",function(err,vendors){
 			console.log(vendors);
 			return res.view('quickbooks/unauthorized',{vendors:vendors})
 		})
