@@ -105,7 +105,7 @@ module.exports = {
 		})
 		qbo.findVendors(" where GivenName = 'Alison'",function(err,vendors){
 			console.log(vendors);
-			return res.view('quickbooks/manage',{vendors:vendors.Vendor})
+			return res.view('quickbooks/manage',{vendors:vendors})
 		})
 
 		// res.send('<!DOCTYPE html><html lang="en"><head></head><body><script>window.opener.location.reload(); window.close();</script></body></html>')
