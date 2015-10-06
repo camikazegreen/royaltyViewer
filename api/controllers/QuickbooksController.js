@@ -103,7 +103,7 @@ module.exports = {
 			if (err){console.log(err)};
 			console.log(data)
 		})
-		qbo.findVendors(" where GivenName = 'Alison'",function(err,vendors){
+		qbo.findVendors(function(err,vendors){
 			console.log(vendors);
 			return res.view('quickbooks/manage',{vendors:vendors.QueryResponse.Vendor})
 		})
