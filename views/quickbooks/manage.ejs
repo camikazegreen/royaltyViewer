@@ -11,8 +11,8 @@
 <div class="container">
 <table id="vendor-table" class="table-hover table-responsive table-bordered">
 	<thead>
-		<th>Bill Addr</th>
-		<th>Tax Identifier</th>
+		<th>BillAddr</th>
+		<th>TaxIdentifier</th>
 		<th>Vendor1099</th>
 		<th>Id</th>
 		<th>GivenName</th>
@@ -35,15 +35,14 @@
 $('#vendor-table')
 .bind('dynatable:preinit',function(e,dynatable){
   console.log("bound function");
-  dynatable.utility.textTransform.CamelCase = function(text){
+  dynatable.utility.textTransform.exact = function(text){
   	return text
-  	.replace(/[A-Z]/,function($1){return $1.toLowerCase()})
   }
 })
 .dynatable({
 dataset:{
   records: myRecords
   },
-  table:{defaultColumnIdStyle: 'CamelCase'}
+  table:{defaultColumnIdStyle: 'exact'}
   })
 </script>
