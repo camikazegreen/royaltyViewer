@@ -33,8 +33,12 @@
 	var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
 $('#vendor-table')
-.bind('dynatable:afterUpdate',function(e,dynatable){
+.bind('dynatable:preinit',function(e,dynatable){
   console.log("bound function");
+  dynatable.utility.textTransform.CamelCase = function(text){
+  	return text
+  	.replace(/[A-Z]/,function($1){return $1/L})
+  }
 })
 .dynatable({
 dataset:{
