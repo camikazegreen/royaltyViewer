@@ -19,8 +19,9 @@
 
 </div>
 <pre id="json-records" class="">
-<% var records= JSON.stringify(user) %>
+<% if(user){var records= JSON.stringify(user) %>
 <%= records %>
+<% }; %>
 </pre>
 <div class="col-sm-6">
   <h1>Hello Team!</h1>
