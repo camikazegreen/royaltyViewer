@@ -37,7 +37,7 @@ $('#vendor-table')
   console.log("bound function");
   dynatable.utility.textTransform.CamelCase = function(text){
   	return text
-  	.replace(/[A-Z]/,function($1){return $1/L})
+  	.replace(/[A-Z]/,function($1){return $1.toLowerCase()})
   }
 })
 .dynatable({
