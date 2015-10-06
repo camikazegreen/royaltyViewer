@@ -1,0 +1,46 @@
+<!-- Default home page -->
+<!--SCRIPTS-->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/addclients.js"></script>
+<script src="/js/dynatable.js"></script>
+<script src="/js/manageclients.js"></script>
+<!--SCRIPTS END-->
+<!--STYLES-->
+<link rel="stylesheet" href="/styles/dynatable.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/styles/style.css">
+<!--STYLES END-->
+<div class="container">
+<table id="vendor-table" class="table-hover table-responsive table-bordered">
+	<thead>
+		<th>BillAddr</th>
+		<th>TaxIdentifier</th>
+		<th>Vendor1099</th>
+		<th>Id</th>
+		<th>GivenName</th>
+		<th>FamilyName</th>
+		<th>DisplayName</th>
+		<th>PrintOnCheckName</th>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+</div> <!-- close container -->
+<pre id="json-records" class="hidden">
+<% var records= JSON.stringify(vendors) %>
+<%= records %>
+</pre>
+
+<script type="text/javascript">
+	var $records = $('#json-records'),
+    myRecords = JSON.parse($records.text());
+$('#vendor-table')
+.bind('dynatable:afterUpdate',function(e,dynatable){
+  console.log("bound function");
+})
+.dynatable({
+dataset:{
+  records: myRecords
+  }
+  })
+</script>
