@@ -639,7 +639,12 @@
     <textarea class="form-control" rows="10"></textarea>
       </div>
     </div><!-- Close notes tab div -->
-    <div role="tabpanel" class="tab-pane" id="import">This is where I will put the ability to import clients from CSV</div>
+    <div role="tabpanel" class="tab-pane" id="import">This is where I will put the ability to import clients from CSV
+      <form action="/client/import" enctype="multipart/form-data" method="post">
+        <input type="file" name="csvFile" size=40>
+        <button type="submit" class="btn btn-default" id="submitClient">Submit</button>
+      </form>
+    </div>
     <div role="tabpanel" class="tab-pane" id="advanced">   
     <div class="col-sm-3">
       <label for="">Music Maestro ID</label>

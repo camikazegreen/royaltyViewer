@@ -27,6 +27,9 @@ module.exports = {
 			console.log("No error in",results);
 			return res.view('client/manage',{clients:results})
 		})
+	},
+	import: function(req,res){
+		console.log(req.files);
 	}
 };
 

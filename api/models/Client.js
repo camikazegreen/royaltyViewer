@@ -68,6 +68,12 @@ module.exports = {
     },
     clientrep:{
       type:'string'
+    },
+    startdate:{
+      type:'date'
+    },
+    enddate:{
+      type:'date'
     }
 
   }
