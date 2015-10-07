@@ -40,7 +40,7 @@ module.exports = {
 				return res.badRequest('No file was uploaded');
 			}
 			console.log(uploadedFiles)
-			parse(uploadedFiles[0],{},function(err,output){
+			parse(uploadedFiles[0].fd,{},function(err,output){
 				console.log("output = ",output);
 			})
 		})
