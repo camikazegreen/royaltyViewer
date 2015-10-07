@@ -29,7 +29,14 @@ module.exports = {
 		})
 	},
 	import: function(req,res){
-		console.log(req.files);
+		req.file('csvFile').upload({maxBytes:10000000},function whenDone(err, uploadedFiles){
+			if(err){return res.negotiate(err);
+			}
+			if (uploadedFiles.length === 0){
+				return res.badRequest('No file was uploaded');
+			}
+			console.log(uploadedFiles)
+		})
 	}
 };
 
