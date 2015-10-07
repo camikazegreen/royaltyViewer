@@ -35,10 +35,15 @@ module.exports = {
 		var parser = parse({columns:true},function(err,data){
 			// console.log(data);
 			for (var i = data.length - 1; i >= 0; i--) {
-				console.log(i,data[i])
 				if(data[i].pka==''){
 					data[i].pka = data[i]['first name']+' '+data[i]['last name'];
 				}
+				if(data[i].band){
+					Band.findOrCreate({name:data[i].band},{name:data[i].band}).exec(function(err,record){
+						console.log(record);
+					})
+				}
+				console.log(i,data[i])
 			};
 			return res.view('client/import',{clients:data});
 		});
