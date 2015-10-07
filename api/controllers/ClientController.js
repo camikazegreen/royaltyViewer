@@ -72,6 +72,8 @@ module.exports = {
 				held:data[i].Held,
 				Rrate:data[i]['[R]'],
 				SRrate:data[i]['[SR]']
+			},function(err,record){
+				console.log(err,record);
 			})
 			};
 			return res.view('client/import',{clients:data});
