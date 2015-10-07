@@ -32,7 +32,7 @@ module.exports = {
 		var fs = require('fs');
 		var parse = require('csv/node_modules/csv-parse');
 		var output = [];
-		var parser = parse(function(err,data){console.log(data)});
+		var parser = parse({columns:true},function(err,data){console.log(data)});
 
 		req.file('csvFile').upload({maxBytes:10000000},function whenDone(err, uploadedFiles){
 			if(err){return res.negotiate(err);
