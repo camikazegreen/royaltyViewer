@@ -36,6 +36,9 @@ module.exports = {
 			// console.log(data);
 			for (var i = data.length - 1; i >= 0; i--) {
 				console.log(i,data[i])
+				if(data[i].pka==''){
+					data[i].pka = data[i]['first name']+' '+data[i]['last name'];
+				}
 			};
 			return res.view('client/import',{clients:data});
 		});
