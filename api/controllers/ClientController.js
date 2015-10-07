@@ -36,6 +36,7 @@ module.exports = {
 			})
 		var output = [];
 		parser.on('readable',function(){
+			console.log('readable');
 			while(record = parser.read()){
 				output.push(record);
 			}
