@@ -40,10 +40,39 @@ module.exports = {
 				}
 				if(data[i].band){
 					Band.findOrCreate({name:data[i].band},{name:data[i].band}).exec(function(err,record){
-						console.log(record);
+						data[i].bandId = record.id;
+						console.log(data[i]);
 					})
 				}
+				if(data[i].Controlled=="Yes"){data[i].Controlled=true}
+				if(data[i].Controlled=="No"){data[i].Controlled=false}
+				if(data[i].Held=="Y"){data[i].Held=true}
+				if(data[i].Held=="N"){data[i].Held=false}
 				console.log(i,data[i])
+			Client.findOrCreate({mmcode:data[i].Code},{
+				entity:data[i].entity,
+				firstname:data[i]['first name'],
+				middlename:data[i]['middle name'],
+				lastname:data[i]['last name'],
+				performsas:data[i].pka,
+				controlled:data[i].Controlled,
+				company:data[i].Company,
+				finder:data[i].finderId,
+				bands:data[i].bandId,
+				address1:data[i]['First Line'],
+				address2:data[i]['Second Line'],
+				city:data[i].City,
+				state:data[i].State,
+				zip:data[i].Zip,
+				country:data[i].Country,
+				email:data[i].Email,
+				startdate:data[i]['Contract Date'],
+				enddate:data[i]['Expiry Date'],
+				mmcode:data[i].Code,
+				held:data[i].Held,
+				Rrate:data[i]['[R]'],
+				SRrate:data[i]['[SR]']
+			})
 			};
 			return res.view('client/import',{clients:data});
 		});
