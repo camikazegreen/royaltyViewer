@@ -46,6 +46,16 @@ $('#vendor-table')
 dataset:{
   records: myRecords
   },
-  table:{defaultColumnIdStyle: 'exact'}
+  table:{defaultColumnIdStyle: 'exact'},
+  readers: {
+            'Code': function(el, record) {
+                return Number(el.innerHTML);
+            }
+        },
+        writers: {
+            'Code': function(record) {
+                return record.Code.toString();
+            }
+        }
   })
 </script>
