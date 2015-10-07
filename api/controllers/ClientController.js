@@ -29,13 +29,18 @@ module.exports = {
 		})
 	},
 	import: function(req,res){
+		var fs = require('fs');
+		var parse = require('csv/node_modules/csv-parse');
+		var parser = parse(function(err,data){
+				console.log(data);
+			})
 		req.file('csvFile').upload({maxBytes:10000000},function whenDone(err, uploadedFiles){
 			if(err){return res.negotiate(err);
 			}
 			if (uploadedFiles.length === 0){
 				return res.badRequest('No file was uploaded');
 			}
-			console.log(uploadedFiles)
+			fs.createReadStream(uploadedFiles).pipe(parser);
 		})
 	}
 };
