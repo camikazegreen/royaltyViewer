@@ -39,7 +39,7 @@ module.exports = {
 			if (uploadedFiles.length === 0){
 				return res.badRequest('No file was uploaded');
 			}
-			parse(uploadedFiles,{},funtion(err,output){
+			parse(uploadedFiles,{},function(err,output){
 				console.log(output);
 			})
 		})
