@@ -40,7 +40,7 @@ module.exports = {
 				}
 				if(data[i].band){
 					Band.findOrCreate({name:data[i].band},{name:data[i].band}).exec(function(err,record){
-						data[i].band = record.id;
+						// data[i].band = record.id;
 						console.log(data[i]);
 					})
 				}
