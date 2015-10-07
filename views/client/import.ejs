@@ -1,0 +1,51 @@
+<!-- Default home page -->
+<!--SCRIPTS-->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/dynatable.js"></script>
+<!--SCRIPTS END-->
+<!--STYLES-->
+<link rel="stylesheet" href="/styles/dynatable.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/styles/style.css">
+<!--STYLES END-->
+<div class="container">
+<table id="vendor-table" class="table-hover table-responsive table-bordered">
+	<thead>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Controlled</th>
+		<th>Crossed</th>
+		<th>Contract Date/th>
+		<th>Payee</th>
+		<th>Expiry Date</th>
+		<th>Email</th>
+		<th>Held</th>
+		<th>Contact</th>
+		<th>Address</th>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+</div> <!-- close container -->
+<pre id="json-records" class="hidden">
+<% var records= JSON.stringify(clients) %>
+<%= records %>
+</pre>
+
+<script type="text/javascript">
+	var $records = $('#json-records'),
+    myRecords = JSON.parse($records.text());
+$('#vendor-table')
+.bind('dynatable:preinit',function(e,dynatable){
+  console.log("bound function");
+  dynatable.utility.textTransform.exact = function(text){
+  	return text
+  }
+})
+.dynatable({
+dataset:{
+  records: myRecords
+  },
+  table:{defaultColumnIdStyle: 'exact'}
+  })
+</script>
