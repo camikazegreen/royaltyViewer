@@ -14,6 +14,9 @@ module.exports = {
   	firstname:{
   		type:'string'
   	},
+    middlename:{
+      type:'string'
+    },
   	lastname:{
   		type:'string'
   	},
@@ -35,6 +38,9 @@ module.exports = {
   	company:{
   		model:'company'
   	},
+    finder:{
+      model:'client'
+    },
   	inband:{
   		type:'boolean'
   	},
@@ -58,7 +64,8 @@ module.exports = {
       type:'string'
     },
     country:{
-      type:'string'
+      type:'string',
+      defaultsTo: 'USA'
     },
     email:{
       type:'string'
@@ -74,6 +81,21 @@ module.exports = {
     },
     enddate:{
       type:'date'
+    },
+    mmcode:{
+      type:'integer'
+    },
+    qbcode:{
+      type:'integer'
+    },
+    held:{
+      type:'boolean'
+    },
+    Rrate:{
+      type:'boolean'
+    },
+    SRrate:{
+      type:'boolean'
     }
 
   }
