@@ -32,6 +32,7 @@ module.exports = {
 		var fs = require('fs');
 		var parse = require('csv/node_modules/csv-parse');
 		var output = [];
+		var parser = parse(function(err,data){console.log(data)});
 
 		req.file('csvFile').upload({maxBytes:10000000},function whenDone(err, uploadedFiles){
 			if(err){return res.negotiate(err);
@@ -40,9 +41,7 @@ module.exports = {
 				return res.badRequest('No file was uploaded');
 			}
 			console.log(uploadedFiles)
-			parse(uploadedFiles[0].fd,{},function(err,output){
-				console.log("output = ",output);
-			})
+			fs.createReadStream(uploadedFiles[0].fd).pipe(parser);
 		})
 	}
 };
