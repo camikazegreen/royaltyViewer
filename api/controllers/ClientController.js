@@ -40,7 +40,7 @@ module.exports = {
 				}
 				if(data[i].band){
 					Band.findOrCreate({name:data[i].band},{name:data[i].band}).exec(function(err,record){
-						data[i].bandId = record.id;
+						data[i].band = record.id;
 						console.log(data[i]);
 					})
 				}
@@ -57,14 +57,14 @@ module.exports = {
 				performsas:data[i].pka,
 				controlled:data[i].Controlled,
 				company:data[i].Company,
-				finder:data[i].finderId,
-				bands:data[i].bandId,
+				finder:data[i].finder,
+				bands:data[i].band,
 				address1:data[i]['First Line'],
 				address2:data[i]['Second Line'],
 				city:data[i].City,
 				state:data[i].State,
 				zip:data[i].Zip,
-				country:data[i].Country,
+				// country:data[i].Country,
 				email:data[i].Email,
 				startdate:data[i]['Contract Date'],
 				enddate:data[i]['Expiry Date'],
