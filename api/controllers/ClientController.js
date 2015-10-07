@@ -33,7 +33,10 @@ module.exports = {
 		var parse = require('csv/node_modules/csv-parse');
 		var output = [];
 		var parser = parse({columns:true},function(err,data){
-			console.log(data);
+			// console.log(data);
+			for (var i = data.length - 1; i >= 0; i--) {
+				console.log(i,data[i])
+			};
 			return res.view('client/import',{clients:data});
 		});
 
