@@ -48,6 +48,7 @@ module.exports = {
 				if(data[i].Controlled=="No"){data[i].Controlled=false}
 				if(data[i].Held=="Y"){data[i].Held=true}
 				if(data[i].Held=="N"){data[i].Held=false}
+				data[i].Code = parseInt(data[i].Code);
 				console.log(i,data[i])
 			Client.findOrCreate({mmcode:data[i].Code},{
 				entity:data[i].entity,
