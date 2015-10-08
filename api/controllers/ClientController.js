@@ -57,8 +57,8 @@ module.exports = {
 				middlename:data[i]['middle name'],
 				lastname:data[i]['last name'],
 				performsas:data[i].pka,
-				controlled:data[i].Controlled
-				// company:data[i].Company,
+				controlled:data[i].Controlled,
+				company:data[i].Company
 				// finder:data[i].finder,
 				// bands:data[i].band,
 				// address1:data[i]['First Line'],
