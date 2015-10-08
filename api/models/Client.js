@@ -83,10 +83,10 @@ module.exports = {
       type:'date'
     },
     mmcode:{
-      type:'integer'
+      type:'string'
     },
     qbcode:{
-      type:'integer'
+      type:'string'
     },
     held:{
       type:'boolean'
