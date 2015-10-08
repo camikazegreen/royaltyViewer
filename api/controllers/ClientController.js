@@ -49,32 +49,32 @@ module.exports = {
 				if(data[i].Held=="Y"){data[i].Held=true}
 				if(data[i].Held=="N"){data[i].Held=false}
 				console.log(i,data[i])
-			Client.findOrCreate({mmcode:data[i].Code},{
-				entity:data[i].entity,
-				firstname:data[i]['first name'],
-				middlename:data[i]['middle name'],
-				lastname:data[i]['last name'],
-				performsas:data[i].pka,
-				controlled:String(data[i].Controlled).toLowerCase == "true",
-				company:data[i].Company,
-				finder:data[i].finder,
-				bands:data[i].band,
-				address1:data[i]['First Line'],
-				address2:data[i]['Second Line'],
-				city:data[i].City,
-				state:data[i].State,
-				zip:data[i].Zip,
-				// country:data[i].Country,
-				email:data[i].Email,
-				startdate:new Date(data[i]['Contract Date']),
-				enddate:new Date(data[i]['Expiry Date']),
-				mmcode:data[i].Code,
-				held:String(data[i].Held).toLowerCase == "true",
-				Rrate:String(data[i]['[R]']).toLowerCase == "true",
-				SRrate:String(data[i]['[SR]']).toLowerCase == "true"
-			},function(err,record){
-				console.log(err,record);
-			})
+			// Client.findOrCreate({mmcode:data[i].Code},{
+			// 	entity:data[i].entity,
+			// 	firstname:data[i]['first name'],
+			// 	middlename:data[i]['middle name'],
+			// 	lastname:data[i]['last name'],
+			// 	performsas:data[i].pka,
+			// 	controlled:String(data[i].Controlled).toLowerCase == "true",
+			// 	company:data[i].Company,
+			// 	finder:data[i].finder,
+			// 	bands:data[i].band,
+			// 	address1:data[i]['First Line'],
+			// 	address2:data[i]['Second Line'],
+			// 	city:data[i].City,
+			// 	state:data[i].State,
+			// 	zip:data[i].Zip,
+			// 	// country:data[i].Country,
+			// 	email:data[i].Email,
+			// 	startdate:new Date(data[i]['Contract Date']),
+			// 	enddate:new Date(data[i]['Expiry Date']),
+			// 	mmcode:data[i].Code,
+			// 	held:String(data[i].Held).toLowerCase == "true",
+			// 	Rrate:String(data[i]['[R]']).toLowerCase == "true",
+			// 	SRrate:String(data[i]['[SR]']).toLowerCase == "true"
+			// },function(err,record){
+			// 	console.log(err,record);
+			// })
 			};
 			return res.view('client/import',{clients:data});
 		});
