@@ -58,22 +58,22 @@ module.exports = {
 				lastname:data[i]['last name'],
 				performsas:data[i].pka,
 				controlled:data[i].Controlled,
-				company:data[i].CompanyId
+				company:data[i].CompanyId,
 				// finder:data[i].finder,
-				// bands:data[i].band,
-				// address1:data[i]['First Line'],
-				// address2:data[i]['Second Line'],
-				// city:data[i].City,
-				// state:data[i].State,
-				// zip:data[i].Zip,
-				// country:data[i].Country,
-				// email:data[i].Email,
-				// startdate:data[i]['Contract Date'],
-				// enddate:data[i]['Expiry Date'],
-				// mmcode:data[i].Code,
-				// held:data[i].Held,
-				// Rrate:String(data[i]['[R]']).toLowerCase == "true",
-				// SRrate:String(data[i]['[SR]']).toLowerCase == "true"
+				bands:data[i].band,
+				address1:data[i]['First Line'],
+				address2:data[i]['Second Line'],
+				city:data[i].City,
+				state:data[i].State,
+				zip:data[i].Zip,
+				country:data[i].Country,
+				email:data[i].Email,
+				startdate:data[i]['Contract Date'],
+				enddate:data[i]['Expiry Date'],
+				mmcode:data[i].Code,
+				held:data[i].Held,
+				Rrate:String(data[i]['[R]']).toLowerCase == "true",
+				SRrate:String(data[i]['[SR]']).toLowerCase == "true"
 			},function(err,record){
 				console.log(err,record,i);
 			})
