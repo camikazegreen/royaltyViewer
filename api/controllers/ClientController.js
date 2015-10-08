@@ -48,8 +48,16 @@ module.exports = {
 				if(data[i].Controlled=="No"){data[i].Controlled=false}
 				if(data[i].Held=="Y"){data[i].Held=true}
 				if(data[i].Held=="N"){data[i].Held=false}
-				if(data[i]['Contract Date']){data[i]['Contract Date']=new Date(data[i]['Contract Date'])}
-				if(data[i]['Expiry Date']){data[i]['Expiry Date']=new Date(data[i]['Expiry Date'])}
+				if(data[i]['Contract Date']){
+					data[i]['Contract Date']=new Date(data[i]['Contract Date'])
+				}else{
+					data[i]['Contract Date']=null
+				}
+				if(data[i]['Expiry Date']){
+					data[i]['Expiry Date']=new Date(data[i]['Expiry Date'])
+				}else{
+					data[i]['Expiry Date']=null
+				}
 				console.log(i,data[i])
 			Client.create({
 				entity:data[i].entity,
