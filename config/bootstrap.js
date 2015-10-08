@@ -36,7 +36,11 @@ var companies=[
 {name:'Second Floor Music'},
 {name:'Shlomo Diego'},
 {name:'Superior Music'},
-{name:'United For Opportunity'}
+{name:'United For Opportunity'},
+{name:'Fanatic Records'},
+{name:'1630'},
+{name:'Gallops Music'},
+{name:'TRIBO'}
 ]
 for(var i=0;i<companies.length;i++){
   Company.findOrCreate(
