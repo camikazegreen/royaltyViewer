@@ -48,8 +48,6 @@ module.exports = {
 				if(data[i].Controlled=="No"){data[i].Controlled=false}
 				if(data[i].Held=="Y"){data[i].Held=true}
 				if(data[i].Held=="N"){data[i].Held=false}
-				data[i].Code = parseInt(data[i].Code);
-				console.log("Integer = ",data[i].Code);
 				console.log(i,data[i])
 			Client.findOrCreate({mmcode:data[i].Code},{
 				entity:data[i].entity,
@@ -57,7 +55,7 @@ module.exports = {
 				middlename:data[i]['middle name'],
 				lastname:data[i]['last name'],
 				performsas:data[i].pka,
-				controlled:data[i].Controlled,
+				controlled:String(data[i].Controlled).toLowerCase == "true",
 				company:data[i].Company,
 				finder:data[i].finder,
 				bands:data[i].band,
@@ -71,9 +69,9 @@ module.exports = {
 				startdate:data[i]['Contract Date'],
 				enddate:data[i]['Expiry Date'],
 				mmcode:data[i].Code,
-				held:data[i].Held,
-				Rrate:data[i]['[R]'],
-				SRrate:data[i]['[SR]']
+				held:String(data[i].Held).toLowerCase == "true",
+				Rrate:String(data[i]['[R]']).toLowerCase == "true",
+				SRrate:String(data[i]['[SR]']).toLowerCase == "true"
 			},function(err,record){
 				console.log(err,record);
 			})
