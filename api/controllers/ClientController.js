@@ -71,7 +71,7 @@ module.exports = {
 				startdate:data[i]['Contract Date'],
 				enddate:data[i]['Expiry Date'],
 				mmcode:data[i].Code,
-				qbcode:parseInt(""),
+				qbcode:null,
 				held:data[i].Held,
 				Rrate:data[i]['[R]'],
 				SRrate:data[i]['[SR]']
