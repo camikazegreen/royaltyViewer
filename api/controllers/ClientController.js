@@ -75,7 +75,7 @@ module.exports = {
 				Rrate:String(data[i]['[R]']).toLowerCase == "true",
 				SRrate:String(data[i]['[SR]']).toLowerCase == "true"
 			},function(err,record){
-				console.log(err,record);
+				console.log(err,record,i);
 			})
 			};
 			return res.view('client/import',{clients:data});
