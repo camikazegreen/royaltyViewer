@@ -41,9 +41,6 @@ module.exports = {
     finder:{
       model:'client'
     },
-  	inband:{
-  		type:'boolean'
-  	},
   	bands:{
   		collection:'band',
   		via:'members'
@@ -83,10 +80,12 @@ module.exports = {
       type:'date'
     },
     mmcode:{
-      type:'string'
+      type:'string',
+      unique:true
     },
     qbcode:{
-      type:'string'
+      type:'string',
+      unique:true
     },
     held:{
       type:'boolean'

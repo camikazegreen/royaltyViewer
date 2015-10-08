@@ -51,7 +51,7 @@ module.exports = {
 				if(data[i]['Contract Date']){data[i]['Contract Date']=new Date(data[i]['Contract Date'])}
 				if(data[i]['Expiry Date']){data[i]['Expiry Date']=new Date(data[i]['Expiry Date'])}
 				console.log(i,data[i])
-			Client.findOrCreate({mmcode:parseInt(data[i].Code)},{
+			Client.create({
 				entity:data[i].entity,
 				firstname:data[i]['first name'],
 				middlename:data[i]['middle name'],
