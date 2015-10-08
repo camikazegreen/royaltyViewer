@@ -16,6 +16,7 @@ module.exports = {
 		Client.find().populate('company')
 		.exec(function(err,results){
 			if(err){console.log(err)};
+			console.log(results[0]);
 			for (var i = results.length - 1; i >= 0; i--) {
 				if(results[i].company) {results[i].company = results[i].company.name};
 				if(results[i].address1){
@@ -24,7 +25,7 @@ module.exports = {
 					results[i].address = "<div class='smallAddress'><div>"+address+"</div><span>"+results[i].city+", </span><span>"+results[i].state+" </span><span>"+results[i].zip+"<span></div"
 				};
 			};
-			console.log("No error in",results);
+			// console.log("No error in",results);
 			return res.view('client/manage',{clients:results})
 		})
 	},
