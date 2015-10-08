@@ -17,7 +17,7 @@ module.exports = {
 		.exec(function(err,results){
 			if(err){console.log(err)};
 			for (var i = results.length - 1; i >= 0; i--) {
-				results[i].company = results[i].company.name;
+				if(results[i].company) {results[i].company = results[i].company.name};
 				if(results[i].address1){
 					var address = results[i].address1;
 					if(results[i].address2){address += "<br>"+results[i].address2};
@@ -55,9 +55,9 @@ module.exports = {
 				entity:data[i].entity,
 				firstname:data[i]['first name'],
 				middlename:data[i]['middle name'],
-				lastname:data[i]['last name']
-				// performsas:data[i].pka,
-				// controlled:data[i].Controlled,
+				lastname:data[i]['last name'],
+				performsas:data[i].pka,
+				controlled:data[i].Controlled
 				// company:data[i].Company,
 				// finder:data[i].finder,
 				// bands:data[i].band,
