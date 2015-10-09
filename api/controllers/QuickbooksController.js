@@ -22,33 +22,33 @@ app.use(session({secret: 'smith'}));
 module.exports = {
 	manage: function(req,res){
 	console.log(req.session);
-	var currentUser = req.session.passport.user;
-	 Quickbooks.find({user:currentUser})
-	 .exec(function(err,results){
-	 	console.log(err);
-	 	console.log(results);
-	 	if (results == []){
+	// var currentUser = req.session.passport.user;
+	//  Quickbooks.find({user:currentUser})
+	//  .exec(function(err,results){
+	//  	console.log(err);
+	//  	console.log(results);
+	//  	if (results == []){
 			return res.view('quickbooks/unauthorized',{vendors:"none"})
-	 	};
+	 // 	};
 
-		qbo = new QB(
-			consumerKey,
-			consumerSecret,
-			results[0].oauth_token,
-			results[0].oauth_token_secret,
-			results[0].realmId,
-			false,//sandbox
-			true);//debugging
+		// qbo = new QB(
+		// 	consumerKey,
+		// 	consumerSecret,
+		// 	results[0].oauth_token,
+		// 	results[0].oauth_token_secret,
+		// 	results[0].realmId,
+		// 	false,//sandbox
+		// 	true);//debugging
 
-		qbo.findVendors(" where GivenName = 'Alison'",function(err,vendors){
-			if(err){
-			console.log("error:",err);
-		}
-			console.log(vendors);
-			return res.view('quickbooks/unauthorized',{vendors:vendors})
-		})
+		// qbo.findVendors(" where GivenName = 'Alison'",function(err,vendors){
+		// 	if(err){
+		// 	console.log("error:",err);
+		// }
+		// 	console.log(vendors);
+		// 	return res.view('quickbooks/unauthorized',{vendors:vendors})
+		// })
 
-	 })
+	 // })
 	},
 	RequestTokenServlet: function(req,res){
 	var postBody = {
