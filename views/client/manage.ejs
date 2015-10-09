@@ -46,16 +46,19 @@ var dynatable = $('#client-table')
 .dynatable({
 dataset:{
   records: myRecords
+  },
+  inputs:{
+  	queries: $('#companySelect')
   }
   })
 
-$('#companySelect').change(function(){
-	var value = $(this).val();
-	if (value === ""){
-		dynatable.queries.remove("year");
-	} else {
-		dynatable.queries.add("company",value);
-	}
-	dynatable.process();
-});
+// $('#companySelect').change(function(){
+// 	var value = $(this).val();
+// 	if (value === ""){
+// 		dynatable.queries.remove("year");
+// 	} else {
+// 		dynatable.queries.add("company",value);
+// 	}
+// 	dynatable.process();
+// });
 </script>
