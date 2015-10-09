@@ -13,6 +13,11 @@ module.exports = {
 		})
 	},
 	manage: function(req,res){
+		var companies;
+		Company.find().populate('clients')
+		.exec(function(err,results){
+				companies = results;
+		})
 		Client.find().populate('company')
 		.exec(function(err,results){
 			if(err){console.log(err)};
@@ -26,7 +31,7 @@ module.exports = {
 				};
 			};
 			// console.log("No error in",results);
-			return res.view('client/manage',{clients:results})
+			return res.view('client/manage',{clients:results,companies:companies})
 		})
 	},
 	import: function(req,res){

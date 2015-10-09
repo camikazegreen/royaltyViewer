@@ -11,6 +11,13 @@
 <link rel="stylesheet" href="/styles/style.css">
 <!--STYLES END-->
 <div class="container">
+<label for="companySelect">Company</label>
+<select class="form-control" id="companySelect" name="company">
+  <% for(var i=0;i<companies.length;i++){ %>
+  <option value=<%= companies[i].id %>><%= companies[i].name %></option>
+  <% } %>
+</select>
+
 <table id="client-table" class="table-hover table-responsive table-bordered">
 	<thead>
 		<th>Id</th>
@@ -41,4 +48,14 @@ dataset:{
   records: myRecords
   }
   })
+
+$('#companySelect').change(function(){
+	var value = $(this).val();
+	if (value === ""){
+		dynatable.queries.remove("year");
+	} else {
+		dynatable.queries.add("company",value);
+	}
+	dynatable.process();
+});
 </script>
