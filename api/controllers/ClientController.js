@@ -17,6 +17,7 @@ module.exports = {
 		Company.find().populate('clients')
 		.exec(function(err,results){
 				companies = results;
+				console.log("companies = ",companies)
 		})
 		Client.find().populate('company')
 		.exec(function(err,results){
