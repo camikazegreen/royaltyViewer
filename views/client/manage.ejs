@@ -39,7 +39,7 @@
 <script type="text/javascript">
 	var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
-$('#client-table')
+var dynatable = $('#client-table')
 .bind('dynatable:afterUpdate',function(e,dynatable){
   console.log("bound function");
 })

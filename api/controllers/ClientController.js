@@ -7,7 +7,7 @@
 
 module.exports = {
 	new: function(req,res){
-		Company.find().populate('clients')
+		Company.find()
 		.exec(function(err,results){
 				return res.view('client/new',{companies:results})
 		})
