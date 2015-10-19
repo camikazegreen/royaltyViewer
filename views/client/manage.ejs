@@ -14,7 +14,7 @@
 <label for="companySelect">Company</label>
 <select class="form-control" id="companySelect" name="company">
   <% for(var i=0;i<companies.length;i++){ %>
-  <option value=<%= encodeURI(companies[i].name) %>><%= companies[i].name %></option>
+  <option value=<%= escape(companies[i].name) %>><%= companies[i].name %></option>
   <% } %>
 </select>
 
