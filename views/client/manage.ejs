@@ -13,7 +13,7 @@
 <div class="container">
 <label for="companySelect">Company</label>
 <select class="form-control" id="companySelect" name="company">
-  <% for(var i=0;i<companies.length;i++){ var str = String(companies[i].name) %>
+  <% for(var i=0;i<companies.length;i++){ var str = "'"+String(companies[i].name)+"'" %>
   <option value=<%= str %>><%= str %></option>
   <% } %>
 </select>
