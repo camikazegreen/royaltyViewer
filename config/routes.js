@@ -47,5 +47,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'post role/update':'RoleController.update'
+  'post role/update':'RoleController.update',
+  'get /client/manage/:client':{
+    controller: 'ClientController',
+    action:'edit',
+    skipAssets: true
+  }
 };

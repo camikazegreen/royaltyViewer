@@ -105,6 +105,9 @@ module.exports = {
 			console.log(uploadedFiles)
 			fs.createReadStream(uploadedFiles[0].fd).pipe(parser);
 		})
+	},
+	edit: function(req,res){
+		console.log(req.param('client'));
 	}
 };
 
