@@ -107,7 +107,10 @@ module.exports = {
 		})
 	},
 	edit: function(req,res){
-		console.log(req.param('client'));
+		Client.find(req.param('client'))
+		.exec(function(err,results){
+			return res.view('client/edit',{client:results});
+		})
 	}
 };
 
