@@ -30,6 +30,9 @@ module.exports = {
 					if(results[i].address2){address += "<br>"+results[i].address2};
 					results[i].address = "<div class='smallAddress'><div>"+address+"</div><span>"+results[i].city+", </span><span>"+results[i].state+" </span><span>"+results[i].zip+"<span></div"
 				};
+				if(results[i].performsas){
+					results[i].performsas = "<a href='/"results[i].id"'>"+results[i].performsas+"</a>"
+				}
 			};
 			// console.log("No error in",results);
 			return res.view('client/manage',{clients:results,companies:companies})
