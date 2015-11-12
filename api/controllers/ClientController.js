@@ -31,7 +31,7 @@ module.exports = {
 					results[i].address = "<div class='smallAddress'><div>"+address+"</div><span>"+results[i].city+", </span><span>"+results[i].state+" </span><span>"+results[i].zip+"<span></div"
 				};
 				if(results[i].performsas){
-					results[i].performsas = "<a href='/"results[i].id"'>"+results[i].performsas+"</a>"
+					results[i].performsas = "<a href='/"+results[i].id+"'>"+results[i].performsas+"</a>"
 				}
 			};
 			// console.log("No error in",results);
