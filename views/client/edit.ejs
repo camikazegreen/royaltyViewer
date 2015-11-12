@@ -27,22 +27,22 @@
   <div class="row">
     <div class="col-sm-6">
       <label for="inputEntity">Operates as an Entity?</label>
-      <input type="text" class="form-control" id="entityName" name="entity" placeholder="Entity Name"><%= records.entity %>
+      <input type="text" class="form-control" id="entityName" name="entity" placeholder="Entity Name"><%= client.entity %></input>
     </div>
   </div>
         <div class="row">
   <div class="form-group">
     <div class="col-sm-3">
       <label for="inputName1">First Name</label>
-      <input type="text" class="form-control" id="firstName1" name="firstname" placeholder="First name"><%= records.firstname %>
+      <input type="text" class="form-control" id="firstName1" name="firstname" placeholder="First name"><%= client.firstname %>
     </div>
     <div class="col-sm-3">
       <label for="inputName1">Last Name</label>
-      <input type="text" class="form-control" id="lastName1" name="lastname" placeholder="Last name"><%= records.lastname %>
+      <input type="text" class="form-control" id="lastName1" name="lastname" placeholder="Last name"><%= client.lastname %>
     </div>
     <div class="col-sm-3" id="pkaDiv">
       <label for="inputName1">Performs as</label>
-      <input type="text" class="form-control" id="pkaName1" name="performsas" placeholder="Enter name"><%= records.performsas %>
+      <input type="text" class="form-control" id="pkaName1" name="performsas" placeholder="Enter name"><%= client.performsas %>
       <button type="button" id="morePka"><span class="glyphicon glyphicon-plus"></span></button><button type="button" id="lessPka"><span class="glyphicon glyphicon-minus"></span></button>
   </div>
   <div class="checkbox col-sm-3">
