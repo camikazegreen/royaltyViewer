@@ -144,13 +144,13 @@
   <div class="form-group">
       <label class="col-sm-2 control-label" for="textinput">Client Email</label>
       <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail1" name="email" placeholder="Enter email">
+      <input type="email" class="form-control" id="inputEmail1" name="email" value="<%= client[0].email %>">
       </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label" for="textinput">Phone Number</label>
       <div class="col-sm-10">
-      <input type="tel" class="form-control" id="inputPhone1" name="phone" placeholder="XXX XXX-XXXX">
+      <input type="tel" class="form-control" id="inputPhone1" name="phone" value="<%= client[0].phone %>">
       </div>
   </div>
 </div><!-- close row for email and phone --><br>
@@ -160,7 +160,7 @@
  <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Line 1</label>
   <div class="col-sm-10">
-  <input type="text" placeholder="Address Line 1" class="form-control" id="line1original" name="address1">
+  <input type="text" class="form-control" id="line1original" name="address1" value="<%= client[0].address1 %>">
   </div>
   </div>
 
@@ -168,7 +168,7 @@
  <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">Line 2</label>
  <div class="col-sm-10">
-  <input type="text" placeholder="Address Line 2" class="form-control" id="line2original" name="address2">
+  <input type="text" class="form-control" id="line2original" name="address2" value="<%= client[0].address2 %>">
  </div>
  </div>
 
@@ -176,25 +176,25 @@
   <div class="form-group">
   <label class="col-sm-2 control-label" for="textinput">City</label>
   <div class="col-sm-10">
- <input type="text" placeholder="City" class="form-control" id="cityoriginal" name="city">
+ <input type="text" class="form-control" id="cityoriginal" name="city" value="<%= client[0].city %>">
   </div>
   </div>
 <!-- Text input-->
 <div class="form-group">
  <label class="col-sm-2 control-label" for="textinput">State</label>
 <div class="col-sm-4">
-<input type="text" placeholder="State" class="form-control" id="stateoriginal" name="state">
+<input type="text" class="form-control" id="stateoriginal" name="state" value="<%= client[0].state %>">
 </div>
 <label class="col-sm-2 control-label" for="textinput">Postcode</label>
 <div class="col-sm-4">
-<input type="text" placeholder="Post Code" class="form-control" id="ziporiginal" name="zip">
+<input type="text" class="form-control" id="ziporiginal" name="zip" value="<%= client[0].zip %>">
 </div>
 </div>
 <!-- Text input-->
 <div class="form-group">
 <label class="col-sm-2 control-label" for="textinput">Country</label>
-<div class="col-sm-10">
-<input type="text" placeholder="Country" class="form-control" id="countryoriginal">
+<div class="col-sm-10"> 
+<input type="text" placeholder="Country" class="form-control" id="countryoriginal" value="<%= client[0].country %>">
 </div>
 </div><br>
         <div class="row">
@@ -650,15 +650,15 @@
     <div role="tabpanel" class="tab-pane" id="advanced">   
     <div class="col-sm-3">
       <label for="">Music Maestro ID</label>
-      <input type="text" class="form-control" id="musicMaestroID" name="musicMaestroID" placeholder="12345">
+      <input type="text" class="form-control" id="musicMaestroID" name="musicMaestroID" value="<%= client[0].mmcode %>">
     </div>
     <div class="col-sm-3">
       <label for="">QuickBooks ID</label>
-      <input type="text" class="form-control" id="quickbooksID" name="quickbooksID" placeholder="123">
+      <input type="text" class="form-control" id="quickbooksID" name="quickbooksID" value="<%= client[0].qbcode %>">
     </div>
     <div class="col-sm-3">
       <label for="">Royalty Viewer ID</label>
-      <input type="text" class="form-control" id="royaltyViewerID" name="royaltyViewerID" placeholder="1234">
+      <input type="text" class="form-control" id="royaltyViewerID" name="royaltyViewerID" value="<%= client[0].id %>">
     </div>
     <div class="col-sm-3">
       <label for="">MusicBrainz ID</label>
