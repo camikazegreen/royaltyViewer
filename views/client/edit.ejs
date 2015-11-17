@@ -63,10 +63,12 @@
   <input type="radio" id="catalog2" name="fullcatalog" value="0">Partial Catalog
 </label></div>
   <div class="col-sm-6">
-<label class="checkbox-inline">
-  <input type="checkbox" id="syncApproval1" name="syncapproval" value="1">Sync Approval Rights?
+<label class="checkbox-inline"><% var syncapproval %>
+            <% if(client[0].syncapproval){syncapproval= 'checked'} else {syncapproval = ''} %>
+  <input type="checkbox" id="syncApproval1" name="syncapproval" value="1" <%= syncapproval %>>Sync Approval Rights?
 </label>
-<label class="checkbox-inline">
+<label class="checkbox-inline"><% var managerok %>
+            <% if(client[0].managerok){managerok= 'checked'} else {managerok = ''} %>
   <input type="checkbox" id="syncApproval2" name="managerok" value="1">Manager OK?
 </label>
   </div>
