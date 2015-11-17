@@ -56,11 +56,13 @@
         </div>
         <div class="row"style="padding: 15px 0;">
   <div class="col-sm-6">
-<label class="radio-inline">
-  <input type="radio" id="catalog1" name="fullcatalog" value="1" checked="checked">Full or
+<label class="radio-inline"><% var fullcatalog %>
+            <% if(client[0].fullcatalog){fullcatalog= 'checked'} else {fullcatalog   = ''} %>
+  <input type="radio" id="catalog1" name="fullcatalog" value="1" <%= fullcatalog %>>Full or
 </label>
-<label class="radio-inline">
-  <input type="radio" id="catalog2" name="fullcatalog" value="0">Partial Catalog
+<label class="radio-inline"><% var partial %>
+            <% if(!fullcatalog){partial= 'checked'} else {partial = ''} %>
+  <input type="radio" id="catalog2" name="fullcatalog" value="0" <%= partial %>>Partial Catalog
 </label></div>
   <div class="col-sm-6">
 <label class="checkbox-inline"><% var syncapproval %>
@@ -68,7 +70,7 @@
   <input type="checkbox" id="syncApproval1" name="syncapproval" value="1" <%= syncapproval %>>Sync Approval Rights?
 </label>
 <label class="checkbox-inline"><% var managerok %>
-            <% if(client[0].managerok){managerok= 'checked'} else {managerok = ''} %>
+            <% if(client[0].managerok){managerok= 'checked'} else {managerok   = ''} %>
   <input type="checkbox" id="syncApproval2" name="managerok" value="1">Manager OK?
 </label>
   </div>
