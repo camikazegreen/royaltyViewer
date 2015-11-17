@@ -46,8 +46,9 @@
       <button type="button" id="morePka"><span class="glyphicon glyphicon-plus"></span></button><button type="button" id="lessPka"><span class="glyphicon glyphicon-minus"></span></button>
   </div>
   <div class="checkbox col-sm-3">
-    <label>
-      <input type="checkbox" name="controlled"> Controlled?
+    <label> <% var controlled %>
+            <% if(client[0].controlled){controlled = 'checked'} else {controlled = ''} %>
+      <input type="checkbox" name="controlled" <%= controlled %>> Controlled?
     </label>
   </div>
 
