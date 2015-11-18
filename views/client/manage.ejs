@@ -29,14 +29,14 @@
 		<th>Email</th>
 		<th style="display:none">Company</th>
 		<th data-dynatable-column="clientrep">Rep</th>
-		<th>Rrate</th>
-		<th>Srrate</th>
+		<th style="display:none">Rrate</th>
+		<th style="display:none">Srrate</th>
 	</thead>
 	<tbody>
 	</tbody>
 </table>
 </div> <!-- close container -->
-<pre id="json-records" class="">
+<pre id="json-records" class="hidden">
 <% var records= JSON.stringify(clients) %>
 <%= records %>
 </pre>
