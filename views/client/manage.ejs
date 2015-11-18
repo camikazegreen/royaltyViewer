@@ -47,6 +47,8 @@
 var dynatable = $('#client-table')
 .bind('dynatable:afterUpdate',function(e,dynatable){
   console.log("bound function");
+  highlight("Srrate","gold");
+  highlight("Rrate","silver");
 })
 .dynatable({
 dataset:{
@@ -58,13 +60,18 @@ dataset:{
   });
 dynatable.paginationPerPage.set(100);
 dynatable.process();
-// $('#companySelect').change(function(){
-// 	var value = $(this).val();
-// 	if (value === ""){
-// 		dynatable.queries.remove("year");
-// 	} else {
-// 		dynatable.queries.add("company",value);
-// 	}
-// 	dynatable.process();
-// });
+var highlight = function(rate, color){
+var SRheader = $("#client-table tr th").filter(function(){
+return $(this).text() == rate
+});
+var SRindex = SRheader[0].cellIndex;
+SRindex++;
+var SRrates = $("#client-table tr td:nth-child("+SRindex+")").filter(function(){
+return $(this).text() == "true";
+})
+for (var i = SRrates.length - 1; i >= 0; i--) {
+	SRrates[i].parentElement.style.backgroundColor = color;
+};
+
+}
 </script>
