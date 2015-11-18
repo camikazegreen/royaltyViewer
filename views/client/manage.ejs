@@ -42,6 +42,20 @@
 </pre>
 
 <script type="text/javascript">
+var highlight = function(rate, color){
+var SRheader = $("#client-table tr th").filter(function(){
+return $(this).text() == rate
+});
+var SRindex = SRheader[0].cellIndex;
+SRindex++;
+var SRrates = $("#client-table tr td:nth-child("+SRindex+")").filter(function(){
+return $(this).text() == "true";
+})
+for (var i = SRrates.length - 1; i >= 0; i--) {
+	SRrates[i].parentElement.style.backgroundColor = color;
+};
+
+}
 	var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
 var dynatable = $('#client-table')
@@ -60,18 +74,5 @@ dataset:{
   });
 dynatable.paginationPerPage.set(100);
 dynatable.process();
-var highlight = function(rate, color){
-var SRheader = $("#client-table tr th").filter(function(){
-return $(this).text() == rate
-});
-var SRindex = SRheader[0].cellIndex;
-SRindex++;
-var SRrates = $("#client-table tr td:nth-child("+SRindex+")").filter(function(){
-return $(this).text() == "true";
-})
-for (var i = SRrates.length - 1; i >= 0; i--) {
-	SRrates[i].parentElement.style.backgroundColor = color;
-};
 
-}
 </script>
