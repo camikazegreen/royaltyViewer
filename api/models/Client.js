@@ -90,10 +90,10 @@ module.exports = {
     held:{
       type:'boolean'
     },
-    Rrate:{
+    rrate:{
       type:'boolean'
     },
-    SRrate:{
+    srrate:{
       type:'boolean'
     }
 
