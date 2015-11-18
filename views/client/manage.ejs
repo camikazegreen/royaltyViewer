@@ -11,13 +11,16 @@
 <link rel="stylesheet" href="/styles/style.css">
 <!--STYLES END-->
 <div class="container">
+	<div class="row">
+		<div class="col-sm-3">
 <label for="companySelect">Company</label>
 <select class="form-control" id="companySelect" name="company">
   <% for(var i=0;i<companies.length;i++){ var str = companies[i].name %>
   <option value="<%= str %>"><%= str %></option>
   <% } %>
 </select>
-
+</div>
+</div><!-- close row -->
 <table id="client-table" class="table-hover table-responsive table-bordered">
 	<thead>
 		<th>Id</th>
