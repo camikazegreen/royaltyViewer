@@ -24,7 +24,7 @@ module.exports = {
 			for (var i = results.length - 1; i >= 0; i--) {
 				if(results[i].company) {results[i].company = results[i].company.name};
 				if(results[i].bands[0]){
-					results[i].bands = results[i].bands[0].name;
+					results[i].band = results[i].bands[0].name;
 					console.log(results[i])
 				}
 				if(results[i].address1){
