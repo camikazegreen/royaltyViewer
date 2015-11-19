@@ -21,11 +21,11 @@ module.exports = {
 		Client.find().populateAll()
 		.exec(function(err,results){
 			if(err){console.log(err)};
-			console.log(results[0]);
 			for (var i = results.length - 1; i >= 0; i--) {
 				if(results[i].company) {results[i].company = results[i].company.name};
 				if(results[i].bands){
 					console.log(results[i].bands);
+					console.log(results[i].bands[0])
 					if(results[i].bands[0].name){results[i].bands = results[i].bands[0].name};
 				}
 				if(results[i].address1){
