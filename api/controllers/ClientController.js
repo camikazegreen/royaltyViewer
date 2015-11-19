@@ -24,7 +24,9 @@ module.exports = {
 			console.log(results[0]);
 			for (var i = results.length - 1; i >= 0; i--) {
 				if(results[i].company) {results[i].company = results[i].company.name};
-				if(results[i].bands[0].name){results[i].bands = results[i].bands[0].name};
+				if(results[i].bands){
+					if(results[i].bands[0].name){results[i].bands = results[i].bands[0].name};
+				}
 				if(results[i].address1){
 					var address = results[i].address1;
 					if(results[i].address2){address += "<br>"+results[i].address2};
