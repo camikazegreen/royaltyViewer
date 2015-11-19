@@ -22,6 +22,7 @@ module.exports = {
 		.exec(function(err,results){
 			if(err){console.log(err)};
 			for (var i = results.length - 1; i >= 0; i--) {
+				results[i].band = '';
 				if(results[i].company) {results[i].company = results[i].company.name};
 				if(results[i].bands[0]){
 					results[i].band = results[i].bands[0].name;
