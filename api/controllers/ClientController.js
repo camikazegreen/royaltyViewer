@@ -18,7 +18,7 @@ module.exports = {
 		.exec(function(err,results){
 				companies = results;
 		})
-		Client.find().populateAll()
+		Client.find().populate('company','bands')
 		.exec(function(err,results){
 			if(err){console.log(err)};
 			for (var i = results.length - 1; i >= 0; i--) {
@@ -26,7 +26,6 @@ module.exports = {
 				if(results[i].company) {results[i].company = results[i].company.name};
 				if(results[i].bands[0]){
 					results[i].band = results[i].bands[0].name;
-					console.log(results[i])
 				}
 				if(results[i].address1){
 					var address = results[i].address1;
@@ -113,7 +112,7 @@ module.exports = {
 		})
 	},
 	edit: function(req,res){
-		Client.find(req.param('client'))
+		Client.find(req.param('client')).populateAll()
 		.exec(function(err,results){
 			return res.view('client/edit',{client:results});
 		})
