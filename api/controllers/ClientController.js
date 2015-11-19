@@ -18,7 +18,7 @@ module.exports = {
 		.exec(function(err,results){
 				companies = results;
 		})
-		Client.find().populate('company','bands')
+		Client.find().populate('company').populate('bands')
 		.exec(function(err,results){
 			if(err){console.log(err)};
 			for (var i = results.length - 1; i >= 0; i--) {
