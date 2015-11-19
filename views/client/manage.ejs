@@ -60,7 +60,7 @@ var highlight = function(rate, color){
 }
 var makeEditable = function(){
 	var rows=$('tr');
-	var emailHeader = ("#client-table tr th").filter(function(){
+	var emailHeader = $("#client-table tr th").filter(function(){
 		return $(this).text() == "Email";
 	})
 	var emailIndex = emailHeader[0].cellIndex;
