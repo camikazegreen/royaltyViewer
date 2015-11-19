@@ -19,7 +19,7 @@ module.exports = {
 				companies = results;
 				console.log("companies = ",companies)
 		})
-		Client.find().populate('company')
+		Client.find().populateAll()
 		.exec(function(err,results){
 			if(err){console.log(err)};
 			console.log(results[0]);
