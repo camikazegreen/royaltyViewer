@@ -45,18 +45,30 @@
 
 <script type="text/javascript">
 var highlight = function(rate, color){
-var SRheader = $("#client-table tr th").filter(function(){
-return $(this).text() == rate
-});
-var SRindex = SRheader[0].cellIndex;
-SRindex++;
-var SRrates = $("#client-table tr td:nth-child("+SRindex+")").filter(function(){
-return $(this).text() == "true";
-})
-for (var i = SRrates.length - 1; i >= 0; i--) {
-	SRrates[i].parentElement.style.backgroundColor = color;
-};
+	var SRheader = $("#client-table tr th").filter(function(){
+		return $(this).text() == rate
+	});
+	var SRindex = SRheader[0].cellIndex;
+	SRindex++;
+	var SRrates = $("#client-table tr td:nth-child("+SRindex+")").filter(function(){
+		return $(this).text() == "true";
+	})
+	for (var i = SRrates.length - 1; i >= 0; i--) {
+		SRrates[i].parentElement.style.backgroundColor = color;
+	};
 
+}
+var makeEditable = function(){
+	//Add the update button to the end of every row.
+	var rows=$('tr');
+	for(i=1;i<rows.length;i++){
+  	  var tdButton = document.createElement('button');
+	  tdButton.setAttribute("class","btn btn-default update");
+	  tdButton.setAttribute("id","button"+i);
+	  tdButton.setAttribute("disabled","disabled");
+	  tdButton.innerHTML="Update";
+	  rows[i].appendChild(tdButton);
+	}
 }
 	var $records = $('#json-records'),
     myRecords = JSON.parse($records.text());
@@ -65,6 +77,7 @@ var dynatable = $('#client-table')
   console.log("bound function");
   highlight("Srrate","gold");
   highlight("Rrate","silver");
+  makeEditable();
 })
 .dynatable({
 dataset:{
