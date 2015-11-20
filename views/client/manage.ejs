@@ -72,6 +72,7 @@ var makeEditable = function(){
 		var emailInput = document.createElement('input');
 		emailInput.value = currentEmail;
 		this.appendChild(emailInput);
+		emailInput.focus();
 	})
 
 	for(i=1;i<rows.length;i++){
