@@ -68,6 +68,7 @@ var makeEditable = function(){
 	
 	$("#client-table tr td:nth-child("+emailIndex+")").click(function(){
 		var currentEmail = this.innerHTML;
+		this.innerHTML = "";
 		var emailInput = document.createElement('input');
 		emailInput.innerHTML = currentEmail;
 		this.appendChild(emailInput);
