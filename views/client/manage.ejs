@@ -70,7 +70,7 @@ var makeEditable = function(){
 		var currentEmail = this.innerHTML;
 		var emailInput = document.createElement('input');
 		emailInput.innerHTML = currentEmail;
-		this.innerHTML = emailInput;
+		this.appendChild(emailInput);
 	})
 
 	for(i=1;i<rows.length;i++){
