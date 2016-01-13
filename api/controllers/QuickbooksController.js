@@ -103,7 +103,7 @@ module.exports = {
 			if (err){console.log(err)};
 			console.log(data)
 		})
-		qbo.findVendors(" where maxResults = 1000",function(err,vendors){
+		qbo.findVendors(" maxResults 1000",function(err,vendors){
 			console.log(vendors);
 			if(err){return res.view('quickbooks/manage')};
 			return res.view('quickbooks/manage',{vendors:vendors.QueryResponse.Vendor})
