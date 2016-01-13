@@ -105,13 +105,19 @@ module.exports = {
 		})
 		var fs = require('fs');
 		var stringify = require('csv/node_modules/csv-stringify');
+		var columns = {
+			Vendor1099: 'Vendor1099',
+			TaxIdentifier: 'TaxIdentifier',
+			BillAddr: 'BillAddr',
+			DisplayName: 'DisplayName'
+		}
 
 
 
 		qbo.findVendors(" maxResults 1000",function(err,vendors){
 			console.log(vendors);
 			if(err){return res.view('quickbooks/manage')};
-			stringify(vendors.QueryResponse.Vendor,function(err,output){
+			stringify(vendors.QueryResponse.Vendor,{ header:true,columns:columns},function(err,output){
 				fs.writeFile('Vendors.csv',output);
 				if (err) return console.log(err);
 				console.log('Hello World > Vendors.csv');
