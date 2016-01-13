@@ -104,7 +104,7 @@ module.exports = {
 			console.log(data)
 		})
 		var fs = require('fs');
-		var stringify = require('csv-stringify');
+		var stringify = require('csv/node_modules/csv-stringify');
 
 
 
