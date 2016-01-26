@@ -114,6 +114,16 @@ module.exports = {
 
 
 
+		qbo.findVendors(" maxResults 1000",function(err,vendors){
+			console.log(vendors);
+			if(err){return res.view('quickbooks/manage')};
+			stringify(vendors.QueryResponse.Vendor,{ header:true,columns:columns},function(err,output){
+				fs.writeFile('Vendors1.csv',output);
+				if (err) return console.log(err);
+				console.log('Hello World > Vendors.csv');
+			});
+			//return res.view('quickbooks/manage',{vendors:vendors.QueryResponse.Vendor})
+		})
 		qbo.findVendors(" maxResults 1000 startPosition 1001",function(err,vendors){
 			console.log(vendors);
 			if(err){return res.view('quickbooks/manage')};
